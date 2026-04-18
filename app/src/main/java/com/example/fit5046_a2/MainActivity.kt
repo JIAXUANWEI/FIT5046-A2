@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.fit5046_a2.ui.screens.ProfileScreen
 import com.example.fit5046_a2.ui.theme.FIT5046A2Theme
 
 class MainActivity : ComponentActivity() {
@@ -19,11 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FIT5046A2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                FIT5046A2Theme {
+                    ProfileScreen()
                 }
             }
         }
