@@ -31,7 +31,7 @@ fun MainApp() {
         "history" -> WasteHistoryScreen(
             onBackClick = { currentScreen = "home" },
             onAddItemClick = { currentScreen = "add" },
-            onItemClick = { currentScreen = "details" }
+            onItemClick = { _ -> currentScreen = "details" }
         )
         "add" -> AddWasteItemScreen(
             onBackClick = { currentScreen = "history" },
