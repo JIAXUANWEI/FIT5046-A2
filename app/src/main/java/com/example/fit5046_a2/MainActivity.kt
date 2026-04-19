@@ -28,42 +28,42 @@ fun MainApp() {
     when (currentScreen) {
         "home" -> ProfileScreen(
             onHistoryClick = { 
-                Log.d("Navigation", "Navigating to history")
                 currentScreen = "history" 
+                Log.d("Navigation", "Current screen: $currentScreen")
             }
         )
         "history" -> WasteHistoryScreen(
             onBackClick = { 
-                Log.d("Navigation", "Navigating to home")
                 currentScreen = "home" 
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
             onAddItemClick = { 
-                Log.d("Navigation", "Navigating to add item")
                 currentScreen = "add" 
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
             onItemClick = { item ->
-                Log.d("Navigation", "Navigating to details for ${item.name}")
                 currentScreen = "details" 
+                Log.d("Navigation", "Viewing details for ${item.name}. Current screen: $currentScreen")
             }
         )
         "add" -> AddWasteItemScreen(
             onBackClick = { 
-                Log.d("Navigation", "Returning to history from add")
                 currentScreen = "history" 
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
             onSaveClick = { 
-                Log.d("Navigation", "Saved item, returning to history")
                 currentScreen = "history" 
+                Log.d("Navigation", "Current screen: $currentScreen")
             }
         )
         "details" -> WasteItemDetailsScreen(
             onBackClick = { 
-                Log.d("Navigation", "Returning to history from details")
                 currentScreen = "history" 
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
             onDeleteClick = { 
-                Log.d("Navigation", "Deleted item, returning to history")
                 currentScreen = "history" 
+                Log.d("Navigation", "Current screen: $currentScreen")
             }
         )
     }
