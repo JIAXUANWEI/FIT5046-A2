@@ -30,7 +30,8 @@ import com.example.fit5046_a2.ui.components.BottomNavigationBar
 fun WasteHistoryScreen(
     onBackClick: () -> Unit = {},
     onAddItemClick: () -> Unit = {},
-    onItemClick: (WasteItem) -> Unit = {}
+    onItemClick: (WasteItem) -> Unit = {},
+    onMapClick: () -> Unit = {}
 ) {
     val backgroundColor = Color(0xFFF6F7F7)
     val greenColor = Color(0xFF4CAF50)
@@ -46,7 +47,14 @@ fun WasteHistoryScreen(
     }
 
     Scaffold(
-        bottomBar = { BottomNavigationBar(selectedItem = "History") },
+        bottomBar = {
+            BottomNavigationBar(
+                selectedItem = "History",
+                onHomeClick = { onBackClick() },
+                onHistoryClick = { },
+                onMapClick = onMapClick   // ✅ IMPORTANT
+            )
+        },
         containerColor = backgroundColor
     ) { innerPadding ->
         Column(

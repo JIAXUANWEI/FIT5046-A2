@@ -23,14 +23,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainApp() {
-    var currentScreen by remember { mutableStateOf("history") }
+    var currentScreen by remember { mutableStateOf("home") }
     
     when (currentScreen) {
         "home" -> ProfileScreen(
             onHistoryClick = { 
                 currentScreen = "history" 
                 Log.d("Navigation", "Current screen: $currentScreen")
-            }
+            },
+            onMapClick = { currentScreen = "map" }
         )
         "history" -> WasteHistoryScreen(
             onBackClick = { 
@@ -44,7 +45,8 @@ fun MainApp() {
             onItemClick = { item ->
                 currentScreen = "details" 
                 Log.d("Navigation", "Viewing details for ${item.name}. Current screen: $currentScreen")
-            }
+            },
+            onMapClick = { currentScreen = "map" }
         )
         "add" -> AddWasteItemScreen(
             onBackClick = { 
@@ -65,6 +67,10 @@ fun MainApp() {
                 currentScreen = "history" 
                 Log.d("Navigation", "Current screen: $currentScreen")
             }
+        )
+        "map" -> MapScreen(
+            onHomeClick = { currentScreen = "home" },
+            onHistoryClick = { currentScreen = "history" }
         )
     }
 }
