@@ -52,6 +52,17 @@ fun TopNavigationBar(
                 horizontalArrangement = Arrangement.Absolute.SpaceAround,
                 verticalAlignment = Alignment.CenterVertically) {
 
+                NavItem( // change
+                    imageRes = R.drawable.guide,
+                    label = "guide",
+                    selected = selectedItem == "guide",
+                    selectedColor = selectedColor,
+                    unselectedColor =  unselectedColor,
+                    onClick = onGuideClick
+                )
+
+
+
                 Spacer(Modifier.padding(horizontal = 10.dp))
 
                 Text(
@@ -63,7 +74,14 @@ fun TopNavigationBar(
 
                 Spacer(Modifier.padding(horizontal = 10.dp))
 
-
+                NavItem( // change
+                    imageRes = R.drawable.profile,
+                    label = "profile",
+                    selected = selectedItem == "profile",
+                    selectedColor = selectedColor,
+                    unselectedColor =  unselectedColor,
+                    onClick = onProfileClick
+                )
             }
         }
 
