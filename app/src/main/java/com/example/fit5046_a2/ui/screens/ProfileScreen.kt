@@ -26,7 +26,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.res.painterResource
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(
+    onHistoryClick: () -> Unit = {}
+) {
     var notificationsEnabled by remember { mutableStateOf(true) }
     var locationEnabled by remember { mutableStateOf(true) }
 
@@ -37,7 +39,12 @@ fun ProfileScreen() {
     val redColor = Color(0xFFFF5A5F)
 
     Scaffold(
-        bottomBar = { BottomNavigationBar() },
+        bottomBar = { 
+            BottomNavigationBar(
+                selectedItem = "Home",
+                onHistoryClick = onHistoryClick
+            ) 
+        },
         containerColor = backgroundColor
     ) { innerPadding ->
         Column(
