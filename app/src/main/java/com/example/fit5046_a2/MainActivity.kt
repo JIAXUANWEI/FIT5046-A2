@@ -1,6 +1,7 @@
 package com.example.fit5046_a2
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,20 +27,44 @@ fun MainApp() {
     
     when (currentScreen) {
         "home" -> ProfileScreen(
-            onHistoryClick = { currentScreen = "history" }
+            onHistoryClick = { 
+                Log.d("Navigation", "Navigating to history")
+                currentScreen = "history" 
+            }
         )
         "history" -> WasteHistoryScreen(
-            onBackClick = { currentScreen = "home" },
-            onAddItemClick = { currentScreen = "add" },
-            onItemClick = { _ -> currentScreen = "details" }
+            onBackClick = { 
+                Log.d("Navigation", "Navigating to home")
+                currentScreen = "home" 
+            },
+            onAddItemClick = { 
+                Log.d("Navigation", "Navigating to add item")
+                currentScreen = "add" 
+            },
+            onItemClick = { item ->
+                Log.d("Navigation", "Navigating to details for ${item.name}")
+                currentScreen = "details" 
+            }
         )
         "add" -> AddWasteItemScreen(
-            onBackClick = { currentScreen = "history" },
-            onSaveClick = { currentScreen = "history" }
+            onBackClick = { 
+                Log.d("Navigation", "Returning to history from add")
+                currentScreen = "history" 
+            },
+            onSaveClick = { 
+                Log.d("Navigation", "Saved item, returning to history")
+                currentScreen = "history" 
+            }
         )
         "details" -> WasteItemDetailsScreen(
-            onBackClick = { currentScreen = "history" },
-            onDeleteClick = { currentScreen = "history" }
+            onBackClick = { 
+                Log.d("Navigation", "Returning to history from details")
+                currentScreen = "history" 
+            },
+            onDeleteClick = { 
+                Log.d("Navigation", "Deleted item, returning to history")
+                currentScreen = "history" 
+            }
         )
     }
 }
