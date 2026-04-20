@@ -52,7 +52,8 @@ fun MapScreen(
     onHomeClick: () -> Unit,
     onHistoryClick: () -> Unit,
     onProfileClick: () -> Unit,
-    onGuideClick: () -> Unit
+    onGuideClick: () -> Unit,
+    onAchieveClick: () -> Unit
 ) {
 
     val melbourne = LatLng(-37.8136, 144.9631)
@@ -74,6 +75,7 @@ fun MapScreen(
                 selectedItem = "Map",
                 onHomeClick = onHomeClick,
                 onHistoryClick = onHistoryClick,
+                onAchieveClick = onAchieveClick,
                 onMapClick = { }
             )
         },
@@ -117,26 +119,31 @@ fun MapScreen(
                 modifier = Modifier.fillMaxSize(),
                 cameraPositionState = cameraPositionState
             ) {
-                val filteredLocations = if (isMoving) {
-                    locations.filter {
-                        distanceBetween(melbourne, it) < 1000
-                    }.take(20)
-                } else {
-                    locations.take(50)
+                val closestLocation = locations.minByOrNull {
+                    distanceBetween(melbourne, it)
                 }
 
-                val closestLocation = filteredLocations.minByOrNull {
-                    distanceBetween(melbourne, it)
+                val filteredLocations = if (isMoving) {
+                    locations
+                        .sortedBy { distanceBetween(melbourne, it) }
+                        .take(20)
+                } else {
+                    locations.take(50)
                 }
 
                 filteredLocations.forEach { location ->
                     Marker(
                         state = MarkerState(position = location),
                         title = "Recycling Point",
-                        icon = if (isNightTime() && location == closestLocation) {
-                            BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
-                        } else {
-                            BitmapDescriptorFactory.fromResource(R.drawable.recyclebin)
+                        icon = when {
+                            isNightTime() && location == closestLocation ->
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
+
+                            isMoving ->
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
+
+                            else ->
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
                         }
                     )
                 }

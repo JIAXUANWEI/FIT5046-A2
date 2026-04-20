@@ -30,6 +30,7 @@ fun ProfileScreen(
     onHomeClick: () -> Unit = {},
     onHistoryClick: () -> Unit = {},
     onMapClick: () -> Unit = {},
+    onAchieveClick: () -> Unit = {}
 ) {
     var notificationsEnabled by remember { mutableStateOf(true) }
     var locationEnabled by remember { mutableStateOf(true) }
@@ -43,10 +44,11 @@ fun ProfileScreen(
     Scaffold(
         bottomBar = {
             BottomNavigationBar(
-                selectedItem = "Home",
+                selectedItem = "",
                 onHomeClick = { onHomeClick() },
                 onHistoryClick = onHistoryClick,
-                onMapClick = onMapClick
+                onMapClick = onMapClick,
+                onAchieveClick = onAchieveClick
             )
         },
         containerColor = backgroundColor

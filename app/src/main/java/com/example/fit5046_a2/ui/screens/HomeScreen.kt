@@ -42,7 +42,8 @@ fun HomeScreen(
     onGuideClick: () -> Unit,
     onHistoryClick: () -> Unit,
     onMapClick: () -> Unit,
-    onLoginClick: () -> Unit
+    onLoginClick: () -> Unit,
+    onAchieveClick: () -> Unit
 
 ) {
     val backgroundColor = Color(0xFFF6F7F7)
@@ -61,7 +62,8 @@ fun HomeScreen(
             BottomNavigationBar(
                 selectedItem = "Home",
                 onHistoryClick = onHistoryClick,
-                onMapClick = onMapClick
+                onMapClick = onMapClick,
+                onAchieveClick = onAchieveClick
             )
         },
         floatingActionButton = {

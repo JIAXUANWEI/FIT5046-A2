@@ -34,7 +34,8 @@ fun WasteHistoryScreen(
     onItemClick: (WasteItem) -> Unit = {},
     onDeleteClick: (WasteItem) -> Unit = {},
     onEditClick: (WasteItem) -> Unit = {},
-    onMapClick: () -> Unit = {}
+    onMapClick: () -> Unit = {},
+    onAchieveClick: () -> Unit
 ) {
     val backgroundColor = Color(0xFFF6F7F7)
     val greenColor = Color(0xFF4CAF50)
@@ -45,7 +46,8 @@ fun WasteHistoryScreen(
                 selectedItem = "History",
                 onHomeClick = { onBackClick() },
                 onHistoryClick = { },
-                onMapClick = onMapClick
+                onMapClick = onMapClick,
+                onAchieveClick = onAchieveClick
             )
         },
         containerColor = backgroundColor

@@ -59,6 +59,10 @@ fun MainApp() {
             onLoginClick = { 
                 currentScreen = "login"
                 Log.d("Navigation", "Navigating to login. Current screen: $currentScreen")
+            },
+            onAchieveClick = {
+                currentScreen = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
             }
         )
 
@@ -102,6 +106,10 @@ fun MainApp() {
             onMapClick = { 
                 currentScreen = "map"
                 Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+            },
+            onAchieveClick = {
+                currentScreen = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
             }
         )
 
@@ -133,6 +141,10 @@ fun MainApp() {
             onMapClick = {
                 currentScreen = "map"
                 Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+            },
+            onAchieveClick = {
+                currentScreen = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
             }
         )
         "add", "edit" -> AddWasteItemScreen(
@@ -180,11 +192,37 @@ fun MainApp() {
                 Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
             },
             onProfileClick = {
-                currentScreen = "home"
+                currentScreen = "profile"
                 Log.d("Navigation", "Navigating to profile. Current screen: $currentScreen")
             },
             onGuideClick = {
                 Log.d("Navigation", "Guide clicked (not implemented)")
+            },
+            onAchieveClick = {
+                currentScreen = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
+            }
+        )
+
+        "achieve" -> AchievementScreen(
+            onHomeClick = {
+                currentScreen = "home"
+                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
+            },
+            onHistoryClick = {
+                currentScreen = "history"
+                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+            },
+            onProfileClick = {
+                currentScreen = "profile"
+                Log.d("Navigation", "Navigating to profile. Current screen: $currentScreen")
+            },
+            onGuideClick = {
+                Log.d("Navigation", "Guide clicked (not implemented)")
+            },
+            onMapClick = {
+                currentScreen = "map"
+                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
             }
         )
     }
