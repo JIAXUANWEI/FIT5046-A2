@@ -36,7 +36,21 @@ fun MainApp() {
                 currentScreen = "history"
                 Log.d("Navigation", "Current screen: $currentScreen")
             },
-            onMapClick = { currentScreen = "map" }
+            onMapClick = { currentScreen = "map" },
+            onLoginClick = { currentScreen = "login" }
+        )
+
+        "login" -> LoginScreen(
+            onBackClick = { currentScreen = "home" },
+            onLoginClick = { currentScreen = "home" },
+            onGoogleLoginClick = { },
+            onRegisterClick = { currentScreen = "register" },
+            onForgotPasswordClick = { }
+        )
+
+        "register" -> RegisterScreen(
+            onBackClick = { currentScreen = "login" },
+            onRegisterClick = { currentScreen = "home" }
         )
 
         "profile" -> ProfileScreen(

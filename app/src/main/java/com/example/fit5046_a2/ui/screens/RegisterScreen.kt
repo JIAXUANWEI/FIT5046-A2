@@ -21,6 +21,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fit5046_a2.ui.components.CustomTextField
 import com.example.fit5046_a2.ui.components.EcoGreenDark
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import com.example.fit5046_a2.R
 
 // green
 val EcoGreenLight = Color(0xFF8BC34A)
@@ -29,9 +32,16 @@ val BackgroundGray = Color(0xFFF8F9FA)
 
 
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(onBackClick: () -> Unit = {},
+                   onRegisterClick: () -> Unit = {}) {
     val scrollState = rememberScrollState()
+    var fullName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    var confirmPassword by remember { mutableStateOf("") }
 
+    var passwordVisible by remember { mutableStateOf(false) }
+    var confirmPasswordVisible by remember { mutableStateOf(false) }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -42,8 +52,12 @@ fun RegisterScreen() {
     ) {
         //
         Box(modifier = Modifier.fillMaxWidth()) {
-            IconButton(onClick = { /* 返回 */ }) {
-                Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+            IconButton(onClick = onBackClick) {
+                Image(
+                    painter = painterResource(id = R.drawable.backarrow),
+                    contentDescription = "Back",
+                    modifier = Modifier.size(24.dp)
+                )
             }
         }
 
@@ -74,10 +88,43 @@ fun RegisterScreen() {
         Spacer(modifier = Modifier.height(32.dp))
 
         // form
-        CustomTextField(label = "Full Name", icon = Icons.Default.Person)
-        CustomTextField(label = "Email or Phone Number", icon = Icons.Default.Email)
-        CustomTextField(label = "Password", icon = Icons.Default.Lock, isPassword = true)
-        CustomTextField(label = "Confirm Password", icon = Icons.Default.Shield, isPassword = true)
+        CustomTextField(
+            value = fullName,
+            onValueChange = { fullName = it },
+            label = "Full Name",
+            icon = Icons.Default.Person
+        )
+
+        CustomTextField(
+            value = email,
+            onValueChange = { email = it },
+            label = "Email",
+            icon = Icons.Default.Email
+        )
+
+        CustomTextField(
+            value = password,
+            onValueChange = { password = it },
+            label = "Password",
+            icon = Icons.Default.Lock,
+            isPassword = true,
+            passwordVisible = passwordVisible,
+            onTogglePasswordVisibility = {
+                passwordVisible = !passwordVisible
+            }
+        )
+
+        CustomTextField(
+            value = confirmPassword,
+            onValueChange = { confirmPassword = it },
+            label = "Confirm Password",
+            icon = Icons.Default.Lock,
+            isPassword = true,
+            passwordVisible = confirmPasswordVisible,
+            onTogglePasswordVisibility = {
+                confirmPasswordVisible = !confirmPasswordVisible
+            }
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 
