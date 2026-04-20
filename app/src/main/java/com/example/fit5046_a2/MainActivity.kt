@@ -42,28 +42,25 @@ fun MainApp() {
         "home" -> ProfileScreen(
             onHistoryClick = { 
                 currentScreen = "history" 
-                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
-            onMapClick = { 
-                currentScreen = "map" 
-                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
-            }
+            onMapClick = { currentScreen = "map" }
         )
         "history" -> WasteHistoryScreen(
             wasteItems = wasteItems,
             onBackClick = { 
                 currentScreen = "home" 
-                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
             onAddItemClick = { 
                 selectedItem = null
                 currentScreen = "add" 
-                Log.d("Navigation", "Navigating to add. Current screen: $currentScreen, SelectedItem: $selectedItem")
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
             onItemClick = { item ->
                 selectedItem = item
                 currentScreen = "details" 
-                Log.d("Navigation", "Viewing details for ${selectedItem?.name}. Current screen: $currentScreen")
+                Log.d("Navigation", "Viewing details for ${item.name}. Current screen: $currentScreen")
             },
             onDeleteClick = { item ->
                 wasteItems.remove(item)
@@ -72,18 +69,15 @@ fun MainApp() {
             onEditClick = { item ->
                 selectedItem = item
                 currentScreen = "edit"
-                Log.d("Navigation", "Editing item: ${selectedItem?.name}. Current screen: $currentScreen")
+                Log.d("Navigation", "Editing item: ${item.name}")
             },
-            onMapClick = { 
-                currentScreen = "map" 
-                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
-            }
+            onMapClick = { currentScreen = "map" }
         )
         "add", "edit" -> AddWasteItemScreen(
             initialItem = selectedItem,
             onBackClick = { 
                 currentScreen = "history" 
-                Log.d("Navigation", "Back to history. Current screen: $currentScreen")
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
             onSaveClick = { updatedItem -> 
                 if (currentScreen == "edit") {
@@ -95,7 +89,7 @@ fun MainApp() {
                     wasteItems.add(updatedItem)
                 }
                 currentScreen = "history" 
-                Log.d("Navigation", "Item saved. Returning to history. Current screen: $currentScreen")
+                Log.d("Navigation", "Item saved. Current screen: $currentScreen")
             }
         )
         "details" -> {
@@ -104,25 +98,19 @@ fun MainApp() {
                     item = item,
                     onBackClick = { 
                         currentScreen = "history" 
-                        Log.d("Navigation", "Back to history. Current screen: $currentScreen")
+                        Log.d("Navigation", "Current screen: $currentScreen")
                     },
                     onDeleteClick = { 
                         wasteItems.remove(item)
                         currentScreen = "history" 
-                        Log.d("Navigation", "Item deleted: ${item.name}. Current screen: $currentScreen")
+                        Log.d("Navigation", "Item deleted. Current screen: $currentScreen")
                     }
                 )
             }
         }
         "map" -> MapScreen(
-            onHomeClick = { 
-                currentScreen = "home" 
-                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
-            },
-            onHistoryClick = { 
-                currentScreen = "history" 
-                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
-            }
+            onHomeClick = { currentScreen = "home" },
+            onHistoryClick = { currentScreen = "history" }
         )
     }
 }
