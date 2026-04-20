@@ -2,6 +2,7 @@ package com.example.fit5046_a2.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -14,7 +15,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -32,8 +35,19 @@ fun WasteItemDetailsScreen(
     onDeleteClick: () -> Unit = {}
 ) {
     val greenColor = Color(0xFF4CAF50)
-    val redColor = Color(0xFFEF5350)
+    val cardinalColor = Color(0xFFC41E3A)
+    val lightCardinal = Color(0xFFE52B50)
     val lightGray = Color(0xFFF5F5F5)
+
+    // Determine the image based on item name using the new drawables
+    val imageResId = when {
+        item.name.contains("Plastic Bottle", ignoreCase = true) -> R.drawable.plastic_bottle
+        item.name.contains("Glass Bottle", ignoreCase = true) -> R.drawable.glass_bottle
+        item.name.contains("Phone", ignoreCase = true) || item.name.contains("Mobile", ignoreCase = true) -> R.drawable.phone
+        item.name.contains("Soda Can", ignoreCase = true) -> R.drawable.soda_can
+        item.name.contains("Book", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> R.drawable.book_paper
+        else -> R.drawable.leaf
+    }
 
     Scaffold(
         containerColor = Color.White
@@ -83,15 +97,16 @@ fun WasteItemDetailsScreen(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(200.dp)
+                    .height(220.dp)
                     .clip(RoundedCornerShape(24.dp))
-                    .background(Color(0xFFE0E0E0)),
+                    .background(Color(0xFFF9F9F9)),
                 contentAlignment = Alignment.Center
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.leaf), // Placeholder
+                    painter = painterResource(id = imageResId),
                     contentDescription = null,
-                    modifier = Modifier.size(120.dp)
+                    modifier = Modifier.size(160.dp),
+                    contentScale = ContentScale.Fit
                 )
             }
 
@@ -144,17 +159,26 @@ fun WasteItemDetailsScreen(
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Delete Button
-            OutlinedButton(
-                onClick = onDeleteClick,
+            // Cardinal Gradient Delete Button
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(56.dp),
-                shape = RoundedCornerShape(12.dp),
-                border = androidx.compose.foundation.BorderStroke(1.dp, redColor),
-                colors = ButtonDefaults.outlinedButtonColors(contentColor = redColor)
+                    .height(56.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(
+                        brush = Brush.horizontalGradient(
+                            colors = listOf(cardinalColor, lightCardinal)
+                        )
+                    )
+                    .clickable { onDeleteClick() },
+                contentAlignment = Alignment.Center
             ) {
-                Text("Delete Item", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Delete Item",
+                    color = Color.White,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
             
             Spacer(modifier = Modifier.height(24.dp))

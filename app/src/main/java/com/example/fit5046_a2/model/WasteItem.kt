@@ -8,7 +8,7 @@ data class WasteItem(
     val description: String,
     val recyclingInstructions: String,
     val status: String,
-    val dateAdded: String = "April 24, 2024",
+    val dateAdded: String = "April 24, 2026",
     val addedBy: String = "Admin",
     val imageResId: Int? = null
 )

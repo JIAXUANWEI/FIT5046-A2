@@ -28,31 +28,24 @@ import com.example.fit5046_a2.ui.components.BottomNavigationBar
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WasteHistoryScreen(
+    wasteItems: List<WasteItem>,
     onBackClick: () -> Unit = {},
     onAddItemClick: () -> Unit = {},
     onItemClick: (WasteItem) -> Unit = {},
+    onDeleteClick: (WasteItem) -> Unit = {},
+    onEditClick: (WasteItem) -> Unit = {},
     onMapClick: () -> Unit = {}
 ) {
     val backgroundColor = Color(0xFFF6F7F7)
     val greenColor = Color(0xFF4CAF50)
     
-    val wasteItems = remember {
-        mutableStateListOf(
-            WasteItem(1, "Plastic Bottle", "Plastic", "PET (polyethylene Terephthalate)", "Commonly used for single-use bottles.", "Remove cap and label", "Recyclable"),
-            WasteItem(2, "Glass Bottle", "Glass", "Glass", "Commonly used for drinks.", "Rinse thoroughly", "Recyclable"),
-            WasteItem(3, "Mobile Phone", "Electronics", "Mixed", "Old electronic devices.", "Take to e-waste center", "Recyclable"),
-            WasteItem(4, "Aluminum Soda Can", "Aluminum", "Aluminum", "Drink cans.", "Rinse and crush", "Recyclable"),
-            WasteItem(5, "Book Paper", "Paper", "Paper", "Old books or magazines.", "Keep dry", "Recyclable")
-        )
-    }
-
     Scaffold(
         bottomBar = {
             BottomNavigationBar(
                 selectedItem = "History",
                 onHomeClick = { onBackClick() },
                 onHistoryClick = { },
-                onMapClick = onMapClick   // ✅ IMPORTANT
+                onMapClick = onMapClick
             )
         },
         containerColor = backgroundColor
@@ -101,9 +94,11 @@ fun WasteHistoryScreen(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                var searchQuery by remember { mutableStateOf("") }
+                
                 OutlinedTextField(
-                    value = "",
-                    onValueChange = {},
+                    value = searchQuery,
+                    onValueChange = { searchQuery = it },
                     placeholder = { Text("Search", color = Color.Gray) },
                     leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, tint = greenColor) },
                     modifier = Modifier
@@ -142,7 +137,12 @@ fun WasteHistoryScreen(
                 modifier = Modifier.fillMaxSize()
             ) {
                 items(wasteItems) { item ->
-                    WasteItemCard(item, onClick = { onItemClick(item) })
+                    WasteItemCard(
+                        item = item, 
+                        onClick = { onItemClick(item) },
+                        onDeleteClick = { onDeleteClick(item) },
+                        onEditClick = { onEditClick(item) }
+                    )
                 }
             }
         }
@@ -151,7 +151,24 @@ fun WasteHistoryScreen(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WasteItemCard(item: WasteItem, onClick: () -> Unit) {
+fun WasteItemCard(
+    item: WasteItem, 
+    onClick: () -> Unit,
+    onDeleteClick: () -> Unit,
+    onEditClick: () -> Unit
+) {
+    var menuExpanded by remember { mutableStateOf(false) }
+    
+    // Determine the image based on item name using the new drawables
+    val imageResId = when {
+        item.name.contains("Plastic Bottle", ignoreCase = true) -> R.drawable.plastic_bottle
+        item.name.contains("Glass Bottle", ignoreCase = true) -> R.drawable.glass_bottle
+        item.name.contains("Phone", ignoreCase = true) || item.name.contains("Mobile", ignoreCase = true) -> R.drawable.phone
+        item.name.contains("Soda Can", ignoreCase = true) -> R.drawable.soda_can
+        item.name.contains("Book", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> R.drawable.book_paper
+        else -> R.drawable.leaf
+    }
+
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -173,7 +190,7 @@ fun WasteItemCard(item: WasteItem, onClick: () -> Unit) {
                 contentAlignment = Alignment.Center
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.leaf),
+                    painter = painterResource(id = imageResId),
                     contentDescription = null,
                     modifier = Modifier.size(40.dp)
                 )
@@ -200,8 +217,30 @@ fun WasteItemCard(item: WasteItem, onClick: () -> Unit) {
                 )
             }
 
-            IconButton(onClick = { }) {
-                Icon(Icons.Default.MoreVert, contentDescription = "More", tint = Color.Gray)
+            Box {
+                IconButton(onClick = { menuExpanded = true }) {
+                    Icon(Icons.Default.MoreVert, contentDescription = "More", tint = Color.Gray)
+                }
+                
+                DropdownMenu(
+                    expanded = menuExpanded,
+                    onDismissRequest = { menuExpanded = false }
+                ) {
+                    DropdownMenuItem(
+                        text = { Text("Edit") },
+                        onClick = {
+                            menuExpanded = false
+                            onEditClick()
+                        }
+                    )
+                    DropdownMenuItem(
+                        text = { Text("Delete", color = Color.Red) },
+                        onClick = {
+                            menuExpanded = false
+                            onDeleteClick()
+                        }
+                    )
+                }
             }
         }
     }
