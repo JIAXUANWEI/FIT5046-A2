@@ -57,7 +57,6 @@ fun HomeScreen(
         bottomBar = {
             BottomNavigationBar(
                 selectedItem = "Home",
-                onHomeClick = onProfileClick,
                 onHistoryClick = onHistoryClick,
                 onMapClick = onMapClick
             )
@@ -249,11 +248,3 @@ fun HomeScreen(
         }
     }
 }
-
-//@Preview(showBackground = true)
-//@Composable
-//fun HomePreview() {
-//    FIT5046A2Theme {
-//        HomeScreen()
-//    }
-//}
