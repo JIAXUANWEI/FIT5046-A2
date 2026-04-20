@@ -18,22 +18,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import com.example.fit5046_a2.model.WasteItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddWasteItemScreen(
+    initialItem: WasteItem? = null,
     onBackClick: () -> Unit = {},
-    onSaveClick: () -> Unit = {}
+    onSaveClick: (WasteItem) -> Unit = {}
 ) {
     val greenColor = Color(0xFF4CAF50)
+    val isEditing = initialItem != null
     
-    var itemName by remember { mutableStateOf("") }
-    var category by remember { mutableStateOf("") }
-    var materialType by remember { mutableStateOf("") }
-    var description by remember { mutableStateOf("") }
-    var instructions by remember { mutableStateOf("") }
-    var status by remember { mutableStateOf("") }
+    var itemName by remember { mutableStateOf(initialItem?.name ?: "") }
+    var category by remember { mutableStateOf(initialItem?.category ?: "") }
+    var materialType by remember { mutableStateOf(initialItem?.materialType ?: "") }
+    var description by remember { mutableStateOf(initialItem?.description ?: "") }
+    var instructions by remember { mutableStateOf(initialItem?.recyclingInstructions ?: "") }
+    var status by remember { mutableStateOf(initialItem?.status ?: "") }
 
     Scaffold(
         containerColor = Color.White
@@ -67,7 +69,7 @@ fun AddWasteItemScreen(
                 }
 
                 Text(
-                    text = "Add New Waste Item",
+                    text = if (isEditing) "Edit Waste Item" else "Add New Waste Item",
                     modifier = Modifier.weight(1f),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
@@ -120,14 +122,27 @@ fun AddWasteItemScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             Button(
-                onClick = onSaveClick,
+                onClick = {
+                    val savedItem = WasteItem(
+                        id = initialItem?.id ?: (0..1000000).random(),
+                        name = itemName,
+                        category = category,
+                        materialType = materialType,
+                        description = description,
+                        recyclingInstructions = instructions,
+                        status = status,
+                        dateAdded = initialItem?.dateAdded ?: "April 24, 2026",
+                        addedBy = initialItem?.addedBy ?: "Admin"
+                    )
+                    onSaveClick(savedItem)
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = greenColor),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                Text("Save Item", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                Text(if (isEditing) "Save Changes" else "Save Item", fontSize = 16.sp, fontWeight = FontWeight.Bold)
             }
             
             Spacer(modifier = Modifier.height(24.dp))
