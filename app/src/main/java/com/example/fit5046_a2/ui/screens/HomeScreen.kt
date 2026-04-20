@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -40,7 +41,9 @@ fun HomeScreen(
     onProfileClick: () -> Unit,
     onGuideClick: () -> Unit,
     onHistoryClick: () -> Unit,
-    onMapClick: () -> Unit
+    onMapClick: () -> Unit,
+    onLoginClick: () -> Unit
+
 ) {
     val backgroundColor = Color(0xFFF6F7F7)
     val mintColor = Color(0xFFDDF3E8)
@@ -61,6 +64,18 @@ fun HomeScreen(
                 onMapClick = onMapClick
             )
         },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = onLoginClick,
+                containerColor = Color(0xFF34C759)
+            ) {
+                Text(
+                    text = "Test",
+                    color = Color.White
+                )
+            }
+        },
+
         containerColor = backgroundColor
     ) { innerPadding ->
         Column(
