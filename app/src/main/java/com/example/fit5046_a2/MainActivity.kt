@@ -39,15 +39,17 @@ fun MainApp() {
     }
     
     when (currentScreen) {
-        "home" -> ProfileScreen(
-            onHistoryClick = { 
-                currentScreen = "history" 
-                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+        "home" -> HomeScreen(
+            onProfileClick = {
+                currentScreen = "profile"
+                Log.d("Navigation", "Navigating to Profile")
             },
-            onMapClick = { 
-                currentScreen = "map" 
-                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+            onGuideClick = { currentScreen = "map" },
+            onHistoryClick = {
+                currentScreen = "history"
+                Log.d("Navigation", "Current screen: $currentScreen")
             },
+            onMapClick = { currentScreen = "map" } ,
             onLoginClick = { currentScreen = "login" }
         )
 
@@ -68,8 +70,8 @@ fun MainApp() {
             onHomeClick = { currentScreen = "home" },
             onHistoryClick = { currentScreen = "history" },
             onMapClick = { currentScreen = "map" }
-
         )
+
         "history" -> WasteHistoryScreen(
             wasteItems = wasteItems,
             onBackClick = { 

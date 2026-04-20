@@ -29,7 +29,7 @@ import androidx.compose.ui.res.painterResource
 fun ProfileScreen(
     onHomeClick: () -> Unit = {},
     onHistoryClick: () -> Unit = {},
-    onMapClick: () -> Unit = {}
+    onMapClick: () -> Unit = {},
 ) {
     var notificationsEnabled by remember { mutableStateOf(true) }
     var locationEnabled by remember { mutableStateOf(true) }
