@@ -9,6 +9,7 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -19,10 +20,34 @@ import com.example.fit5046_a2.R
 import com.example.fit5046_a2.ui.components.BottomNavigationBar
 import com.example.fit5046_a2.ui.components.TopNavigationBar
 import com.google.maps.android.compose.*
+import androidx.compose.ui.platform.LocalContext
+import com.example.fit5046_a2.data.readRecyclingData
+import android.location.Location
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import java.util.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 
 import com.google.android.gms.maps.model.*
 
+fun distanceBetween(a: LatLng, b: LatLng): Float {
+    val result = FloatArray(1)
+    Location.distanceBetween(
+        a.latitude, a.longitude,
+        b.latitude, b.longitude,
+        result
+    )
+    return result[0]
+}
+
+fun isNightTime(): Boolean {
+    val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+    return hour < 6 || hour > 18
+}
+
 @Composable
+
 fun MapScreen(
     onHomeClick: () -> Unit,
     onHistoryClick: () -> Unit,
@@ -59,75 +84,72 @@ fun MapScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
+            val context = LocalContext.current
+            val locations = remember {
+                readRecyclingData(context)
+            }
+            var isMoving by remember { mutableStateOf(true) }
+            var showPopup by remember { mutableStateOf(false) }
 
-            // 🗺️ Google Map
+            LaunchedEffect(isMoving) {
+                if (!isMoving) {
+                    kotlinx.coroutines.delay(5000)
+                    showPopup = true
+                } else {
+                    showPopup = false
+                }
+            }
+
+            if (showPopup) {
+                AlertDialog(
+                    onDismissRequest = { showPopup = false },
+                    confirmButton = {
+                        Button(onClick = { showPopup = false }) {
+                            Text("OK")
+                        }
+                    },
+                    title = { Text("Suggestion") },
+                    text = { Text("You’ve been inactive. Check nearby recycling points!") }
+                )
+            }
+
             GoogleMap(
                 modifier = Modifier.fillMaxSize(),
                 cameraPositionState = cameraPositionState
             ) {
+                val filteredLocations = if (isMoving) {
+                    locations.filter {
+                        distanceBetween(melbourne, it) < 1000
+                    }.take(20)
+                } else {
+                    locations.take(50)
+                }
 
-                // Example recycling points
-                val locations = listOf(
-                    LatLng(-37.81, 144.96),
-                    LatLng(-37.82, 144.97),
-                    LatLng(-37.83, 144.97),
-                    LatLng(-37.80, 144.95)
-                )
+                val closestLocation = filteredLocations.minByOrNull {
+                    distanceBetween(melbourne, it)
+                }
 
-                locations.forEach {
+                filteredLocations.forEach { location ->
                     Marker(
-                        state = MarkerState(position = it),
+                        state = MarkerState(position = location),
                         title = "Recycling Point",
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.recyclebin)
+                        icon = if (isNightTime() && location == closestLocation) {
+                            BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
+                        } else {
+                            BitmapDescriptorFactory.fromResource(R.drawable.recyclebin)
+                        }
                     )
                 }
             }
 
-//            // HEADER (Top Bar)
-//            Column(
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .align(Alignment.TopCenter)
-//                    .background(Color(0xFFF6F7F7))
-//                    .padding(top = 12.dp, bottom = 12.dp)
-//            ) {
-//
-//                Row(
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .padding(horizontal = 20.dp),
-//                    horizontalArrangement = Arrangement.SpaceBetween,
-//                    verticalAlignment = Alignment.CenterVertically
-//                ) {
-//
-//                    // LEFT: Help
-//                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-//                        Icon(
-//                            imageVector = Icons.Default.Favorite,
-//                            contentDescription = "History",
-//                            tint = Color.Gray
-//                        )
-//                        Text("Help", fontSize = 12.sp, color = Color.Gray)
-//                    }
-//
-//                    // CENTER: Title
-//                    Text(
-//                        text = "EcoSort",
-//                        style = MaterialTheme.typography.titleLarge,
-//                        color = Color(0xFF1F1F1F)
-//                    )
-//
-//                    // RIGHT: Profile
-//                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-//                        Icon(
-//                            imageVector = Icons.Default.Person,
-//                            contentDescription = "Profile",
-//                            tint = Color.Gray
-//                        )
-//                        Text("Profile", fontSize = 12.sp, color = Color.Gray)
-//                    }
-//                }
-//            }
+            Button(
+                onClick = { isMoving = !isMoving },
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(16.dp)
+            ) {
+                Text(if (isMoving) "Stop Moving" else "Start Moving")
+            }
 
             // Search Bar (Top Overlay)
             Box(
