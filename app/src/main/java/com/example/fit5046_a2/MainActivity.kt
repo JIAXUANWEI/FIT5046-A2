@@ -26,12 +26,21 @@ fun MainApp() {
     var currentScreen by remember { mutableStateOf("home") }
     
     when (currentScreen) {
-        "home" -> ProfileScreen(
+        "home" -> HomeScreen(
             onHistoryClick = { 
                 currentScreen = "history" 
                 Log.d("Navigation", "Current screen: $currentScreen")
             },
-            onMapClick = { currentScreen = "map" }
+            onMapClick = { currentScreen = "map" },
+            onProfileClick = {
+                currentScreen = "profile"
+                Log.d("Navigation", "Navigating to Profile")
+            },
+        )
+        "profile" -> ProfileScreen(
+            onHomeClick = { currentScreen = "home" },
+            onHistoryClick = { currentScreen = "history" },
+            onMapClick = { currentScreen = "map" },
         )
         "history" -> WasteHistoryScreen(
             onBackClick = { 

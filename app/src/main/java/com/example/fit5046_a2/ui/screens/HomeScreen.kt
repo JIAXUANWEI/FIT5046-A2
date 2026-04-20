@@ -36,14 +36,24 @@ import com.example.fit5046_a2.ui.components.TopNavigationBar
 import com.example.fit5046_a2.ui.theme.FIT5046A2Theme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onHistoryClick: () -> Unit,
+    onMapClick: () -> Unit,
+    onProfileClick: () -> Unit,
+    onRegisterClick: () -> Unit
+) {
     val backgroundColor = Color(0xFFF6F7F7)
     val mintColor = Color(0xFFDDF3E8)
     val greenColor = Color(0xFF34C759)
 
     Scaffold(
-        topBar = { TopNavigationBar { } },
-        bottomBar = { BottomNavigationBar() },
+        topBar = { TopNavigationBar (onProfileClick = onProfileClick) },
+        bottomBar = {
+            BottomNavigationBar(
+                selectedItem = "Home",
+                onHistoryClick = onHistoryClick,
+                onMapClick = onMapClick,
+            ) },
         containerColor = backgroundColor
     ) { innerPadding ->
         Column(
@@ -229,13 +239,5 @@ fun HomeScreen() {
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun HomePreview() {
-    FIT5046A2Theme {
-        HomeScreen()
     }
 }
