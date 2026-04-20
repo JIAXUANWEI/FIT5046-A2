@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fit5046_a2.R
 import com.example.fit5046_a2.ui.components.BottomNavigationBar
+import com.example.fit5046_a2.ui.components.TopNavigationBar
 import com.google.maps.android.compose.*
 
 import com.google.android.gms.maps.model.*
@@ -24,7 +25,9 @@ import com.google.android.gms.maps.model.*
 @Composable
 fun MapScreen(
     onHomeClick: () -> Unit,
-    onHistoryClick: () -> Unit
+    onHistoryClick: () -> Unit,
+    onProfileClick: () -> Unit,
+    onGuideClick: () -> Unit
 ) {
 
     val melbourne = LatLng(-37.8136, 144.9631)
@@ -34,14 +37,21 @@ fun MapScreen(
     }
 
     Scaffold(
+        topBar = {
+            TopNavigationBar(
+                selectedItem = "",
+                onProfileClick = onProfileClick,
+                onGuideClick = onGuideClick
+            )
+        },
         bottomBar = {
             BottomNavigationBar(
                 selectedItem = "Map",
                 onHomeClick = onHomeClick,
                 onHistoryClick = onHistoryClick,
-                onMapClick = { /* already here */ }
+                onMapClick = { }
             )
-        }
+        },
     ) { padding ->
 
         Box(
@@ -73,57 +83,57 @@ fun MapScreen(
                 }
             }
 
-            // 🟩 HEADER (Top Bar)
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.TopCenter)
-                    .background(Color(0xFFF6F7F7))
-                    .padding(top = 12.dp, bottom = 12.dp)
-            ) {
+//            // HEADER (Top Bar)
+//            Column(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .align(Alignment.TopCenter)
+//                    .background(Color(0xFFF6F7F7))
+//                    .padding(top = 12.dp, bottom = 12.dp)
+//            ) {
+//
+//                Row(
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .padding(horizontal = 20.dp),
+//                    horizontalArrangement = Arrangement.SpaceBetween,
+//                    verticalAlignment = Alignment.CenterVertically
+//                ) {
+//
+//                    // LEFT: Help
+//                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+//                        Icon(
+//                            imageVector = Icons.Default.Favorite,
+//                            contentDescription = "History",
+//                            tint = Color.Gray
+//                        )
+//                        Text("Help", fontSize = 12.sp, color = Color.Gray)
+//                    }
+//
+//                    // CENTER: Title
+//                    Text(
+//                        text = "EcoSort",
+//                        style = MaterialTheme.typography.titleLarge,
+//                        color = Color(0xFF1F1F1F)
+//                    )
+//
+//                    // RIGHT: Profile
+//                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+//                        Icon(
+//                            imageVector = Icons.Default.Person,
+//                            contentDescription = "Profile",
+//                            tint = Color.Gray
+//                        )
+//                        Text("Profile", fontSize = 12.sp, color = Color.Gray)
+//                    }
+//                }
+//            }
 
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 20.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-
-                    // LEFT: Help
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Icon(
-                            imageVector = Icons.Default.Favorite,
-                            contentDescription = "History",
-                            tint = Color.Gray
-                        )
-                        Text("Help", fontSize = 12.sp, color = Color.Gray)
-                    }
-
-                    // CENTER: Title
-                    Text(
-                        text = "EcoSort",
-                        style = MaterialTheme.typography.titleLarge,
-                        color = Color(0xFF1F1F1F)
-                    )
-
-                    // RIGHT: Profile
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Icon(
-                            imageVector = Icons.Default.Person,
-                            contentDescription = "Profile",
-                            tint = Color.Gray
-                        )
-                        Text("Profile", fontSize = 12.sp, color = Color.Gray)
-                    }
-                }
-            }
-
-            // 🔍 Search Bar (Top Overlay)
+            // Search Bar (Top Overlay)
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 90.dp)
+                    .padding(top = 15.dp)
                     .padding(horizontal = 16.dp)
                     .shadow(6.dp, RoundedCornerShape(24.dp))
                     .background(Color.White, RoundedCornerShape(24.dp))

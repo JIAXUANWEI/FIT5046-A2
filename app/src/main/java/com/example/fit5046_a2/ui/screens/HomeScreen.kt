@@ -37,23 +37,30 @@ import com.example.fit5046_a2.ui.theme.FIT5046A2Theme
 
 @Composable
 fun HomeScreen(
-    onHistoryClick: () -> Unit,
-    onMapClick: () -> Unit,
     onProfileClick: () -> Unit,
-    onRegisterClick: () -> Unit
+    onGuideClick: () -> Unit,
+    onHistoryClick: () -> Unit,
+    onMapClick: () -> Unit
 ) {
     val backgroundColor = Color(0xFFF6F7F7)
     val mintColor = Color(0xFFDDF3E8)
     val greenColor = Color(0xFF34C759)
 
     Scaffold(
-        topBar = { TopNavigationBar (onProfileClick = onProfileClick) },
+        topBar = {
+            TopNavigationBar(
+                selectedItem = "",
+                onProfileClick = onProfileClick,
+                onGuideClick = onGuideClick
+            )
+        },
         bottomBar = {
             BottomNavigationBar(
                 selectedItem = "Home",
                 onHistoryClick = onHistoryClick,
-                onMapClick = onMapClick,
-            ) },
+                onMapClick = onMapClick
+            )
+        },
         containerColor = backgroundColor
     ) { innerPadding ->
         Column(

@@ -24,62 +24,70 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainApp() {
     var currentScreen by remember { mutableStateOf("home") }
-    
+
     when (currentScreen) {
         "home" -> HomeScreen(
-            onHistoryClick = { 
-                currentScreen = "history" 
-                Log.d("Navigation", "Current screen: $currentScreen")
-            },
-            onMapClick = { currentScreen = "map" },
             onProfileClick = {
                 currentScreen = "profile"
                 Log.d("Navigation", "Navigating to Profile")
             },
+            onGuideClick = { currentScreen = "map" },
+            onHistoryClick = {
+                currentScreen = "history"
+                Log.d("Navigation", "Current screen: $currentScreen")
+            },
+            onMapClick = { currentScreen = "map" }
         )
+
         "profile" -> ProfileScreen(
             onHomeClick = { currentScreen = "home" },
             onHistoryClick = { currentScreen = "history" },
-            onMapClick = { currentScreen = "map" },
+            onMapClick = { currentScreen = "map" }
         )
+
         "history" -> WasteHistoryScreen(
-            onBackClick = { 
-                currentScreen = "home" 
+            onBackClick = {
+                currentScreen = "home"
                 Log.d("Navigation", "Current screen: $currentScreen")
             },
-            onAddItemClick = { 
-                currentScreen = "add" 
+            onAddItemClick = {
+                currentScreen = "add"
                 Log.d("Navigation", "Current screen: $currentScreen")
             },
             onItemClick = { item ->
-                currentScreen = "details" 
+                currentScreen = "details"
                 Log.d("Navigation", "Viewing details for ${item.name}. Current screen: $currentScreen")
             },
             onMapClick = { currentScreen = "map" }
         )
+
         "add" -> AddWasteItemScreen(
-            onBackClick = { 
-                currentScreen = "history" 
+            onBackClick = {
+                currentScreen = "history"
                 Log.d("Navigation", "Current screen: $currentScreen")
             },
-            onSaveClick = { 
-                currentScreen = "history" 
+            onSaveClick = {
+                currentScreen = "history"
                 Log.d("Navigation", "Current screen: $currentScreen")
             }
         )
+
         "details" -> WasteItemDetailsScreen(
-            onBackClick = { 
-                currentScreen = "history" 
+            onBackClick = {
+                currentScreen = "history"
                 Log.d("Navigation", "Current screen: $currentScreen")
             },
-            onDeleteClick = { 
-                currentScreen = "history" 
+            onDeleteClick = {
+                currentScreen = "history"
                 Log.d("Navigation", "Current screen: $currentScreen")
             }
         )
+
         "map" -> MapScreen(
             onHomeClick = { currentScreen = "home" },
-            onHistoryClick = { currentScreen = "history" }
+            onHistoryClick = { currentScreen = "history" },
+            onProfileClick = { currentScreen = "home" },   // 临时逻辑
+            onGuideClick = { currentScreen = "map" }
         )
     }
 }
