@@ -42,34 +42,67 @@ fun MainApp() {
         "home" -> HomeScreen(
             onProfileClick = {
                 currentScreen = "profile"
-                Log.d("Navigation", "Navigating to Profile")
+                Log.d("Navigation", "Navigating to profile. Current screen: $currentScreen")
             },
-            onGuideClick = { currentScreen = "map" },
+            onGuideClick = { 
+                currentScreen = "map"
+                Log.d("Navigation", "Navigating to map (guide). Current screen: $currentScreen")
+            },
             onHistoryClick = {
                 currentScreen = "history"
-                Log.d("Navigation", "Current screen: $currentScreen")
+                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
             },
-            onMapClick = { currentScreen = "map" } ,
-            onLoginClick = { currentScreen = "login" }
+            onMapClick = { 
+                currentScreen = "map"
+                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+            } ,
+            onLoginClick = { 
+                currentScreen = "login"
+                Log.d("Navigation", "Navigating to login. Current screen: $currentScreen")
+            }
         )
 
         "login" -> LoginScreen(
-            onBackClick = { currentScreen = "home" },
-            onLoginClick = { currentScreen = "home" },
+            onBackClick = { 
+                currentScreen = "home"
+                Log.d("Navigation", "Back to home. Current screen: $currentScreen")
+            },
+            onLoginClick = { 
+                currentScreen = "home"
+                Log.d("Navigation", "Login success. Current screen: $currentScreen")
+            },
             onGoogleLoginClick = { },
-            onRegisterClick = { currentScreen = "register" },
+            onRegisterClick = { 
+                currentScreen = "register"
+                Log.d("Navigation", "Navigating to register. Current screen: $currentScreen")
+            },
             onForgotPasswordClick = { }
         )
 
         "register" -> RegisterScreen(
-            onBackClick = { currentScreen = "login" },
-            onRegisterClick = { currentScreen = "home" }
+            onBackClick = { 
+                currentScreen = "login"
+                Log.d("Navigation", "Back to login. Current screen: $currentScreen")
+            },
+            onRegisterClick = { 
+                currentScreen = "home"
+                Log.d("Navigation", "Register success. Current screen: $currentScreen")
+            }
         )
 
         "profile" -> ProfileScreen(
-            onHomeClick = { currentScreen = "home" },
-            onHistoryClick = { currentScreen = "history" },
-            onMapClick = { currentScreen = "map" }
+            onHomeClick = { 
+                currentScreen = "home"
+                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
+            },
+            onHistoryClick = { 
+                currentScreen = "history"
+                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+            },
+            onMapClick = { 
+                currentScreen = "map"
+                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+            }
         )
 
         "history" -> WasteHistoryScreen(
