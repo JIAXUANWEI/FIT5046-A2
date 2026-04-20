@@ -58,12 +58,12 @@ fun MainApp() {
             onAddItemClick = { 
                 selectedItem = null
                 currentScreen = "add" 
-                Log.d("Navigation", "Navigating to add. Current screen: $currentScreen, SelectedItem is null")
+                Log.d("Navigation", "Navigating to add. Current screen: $currentScreen, SelectedItem: $selectedItem")
             },
             onItemClick = { item ->
                 selectedItem = item
                 currentScreen = "details" 
-                Log.d("Navigation", "Viewing details for ${item.name}. Current screen: $currentScreen")
+                Log.d("Navigation", "Viewing details for ${selectedItem?.name}. Current screen: $currentScreen")
             },
             onDeleteClick = { item ->
                 wasteItems.remove(item)
@@ -72,7 +72,7 @@ fun MainApp() {
             onEditClick = { item ->
                 selectedItem = item
                 currentScreen = "edit"
-                Log.d("Navigation", "Editing item: ${item.name}. Current screen: $currentScreen")
+                Log.d("Navigation", "Editing item: ${selectedItem?.name}. Current screen: $currentScreen")
             },
             onMapClick = { 
                 currentScreen = "map" 
