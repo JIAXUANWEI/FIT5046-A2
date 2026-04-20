@@ -86,7 +86,7 @@ fun MainApp() {
         "map" -> MapScreen(
             onHomeClick = { currentScreen = "home" },
             onHistoryClick = { currentScreen = "history" },
-            onProfileClick = { currentScreen = "home" },   // 临时逻辑
+            onProfileClick = { currentScreen = "profile" },   // 临时逻辑
             onGuideClick = { currentScreen = "map" }
         )
     }
