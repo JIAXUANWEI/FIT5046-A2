@@ -1,546 +1,146 @@
-Borough,Site type,Park/Site Name,Address,Latitude,Longitude
-Bronx,Subproperty,227th St. Plgd,E 227 St/Bronx River Pkway,40.890848989,-73.864223918
-Bronx,Subproperty,Allerton Ballfields,Allerton Ave & Moshulu Pkway,40.8488907878,-73.8771283938
-Bronx,Outdoor,Arthur Ave & E 187 St,Arthur Ave & 187 St,40.85557,-73.887564999999995
-Bronx,Outdoor ,Barstow Mansion,"895 Shore Road, Pelham Bay Park",40.871864,-73.805549
-Bronx,Subproperty,Bradley Playground,2001-2017 Bronx Park E,40.851889,-73.868549
-Bronx,Outdoor,Bronx Botanical Gardens,Visitors Service Center,40.861525999999998,-73.880658999999994
-Bronx,Outdoor,Bronx Botanical Gardens,Visitors Service Center,40.860754999999997,-73.880422999999993
-Bronx,Outdoor,Bronx Botanical Gardens,Visitors Service Center,40.859644000000003,-73.880471999999997
-Bronx,Outdoor,Bronx Botanical Gardens,Visitors Service Center,40.862602000000003,-73.880171000000004
-Bronx,Outdoor,Bronx County Courthouse,161 ST/Grand Concourse,40.826939,-73.922314
-Bronx,Outdoor,Bronx County Courthouse,161 ST/Grand Concourse,40.826627,-73.922447
-Bronx,Outdoor ,Bronx Park,Lydig Ave & Bronx Park E,40.854322,-73.869764
-Bronx,Outdoor ,Bronx Park Playground at Lydig,Lydig Ave & Bronx Park E,40.854445,-73.869863
-Bronx,Outdoor,Bronx Zoo,Entrance to Cafeteria,40.849760000000003,-73.880054999999999
-Bronx,Outdoor,Bronx Zoo,Cafeteria,40.850017000000001,-73.880035000000007
-Bronx,Greenthumb,Bryant Hill Community Garden,Bryant Avenue Bet. Seneca and Garrison Aves.,40.819933,-73.887069
-Bronx,Outdoor ,Burke Bridge,,40.871706,-73.872741
-Bronx,Outdoor,College of Mt. St. Vincent,In front of Alumnae Hall,40.911295000000003,-73.907651999999999
-Bronx,Outdoor,College of Mt. St. Vincent,In front of Cardinal Spellman Hall,40.911236000000002,-73.907910000000001
-Bronx,Outdoor ,Concrete Plant Park,Bronx River bet. Westchster Av and Bruckner Blvd,40.825217,-73.88546
-Bronx,Outdoor ,Crotona Park ,1700 Crotona Ave,40.840115,-73.895513
-Bronx,Outdoor ,Crotona Park ,1700 Crotona Ave,40.835226,-73.895652
-Bronx,Outdoor ,Crotona Park ,1700 Crotona Ave,40.84133,-73.892702
-Bronx,Outdoor ,Crotona Park ,1700 Crotona Ave,40.840876,-73.898206
-Bronx,Outdoor ,Crotona Park ,1700 Crotona Ave,40.838351,-73.893566
-Bronx,Outdoor ,Crotona Park ,1700 Crotona Ave,40.841123,-73.898056
-Bronx,Outdoor,E 174 St & Manor Ave,174 St & Manor Ave,40.833770000000001,-73.877453000000003
-Bronx,Outdoor,E 176 St & Marmion Ave,176 St & Marmion Ave,40.841444000000003,-73.888486999999998
-Bronx,Outdoor,E Gun Hill Rd & Bronxwood Ave,Gun Hill Rd & Bronxwood Ave,40.875552999999996,-73.860525999999993
-Bronx,Outdoor,E Tremont Ave & Bruckner Blvd,Tremont Ave & Bruckner Blvd,40.833109,-73.828284999999994
-Bronx,Outdoor,E Tremont Ave & University Ave,Tremont Ave & University Ave,40.85042,-73.915529000000006
-Bronx,Outdoor ,Echo Park,315 Echo Pl,40.849292,-73.902175
-Bronx,Greenthumb,Edith Community Garden (830 Elton Tenants Assoc.),836 Elton Avenue ,40.822893,-73.91266
-Bronx,Greenthumb,El Flamboyan,Tinton Avenue @ E. 150th Street ,40.813663,-73.905898
-Bronx,Greenthumb,Family Group Garden,419 East 158th Street ,40.82201,-73.914009
-Bronx,Outdoor ,Fordham University,Grand Concourse West & Fordham Rd,40.862402,-73.897174
-Bronx,Outdoor ,Fordham University,Main Entrance (Kazimiroff Blvd),40.861379,-73.881414
-Bronx,Outdoor,Fordham University,Side Entrance (E Fordham Rd & 3 Ave),40.861267,-73.89014
-Bronx,Outdoor,Fordham University,Kingsbridge Rd & Fordham Rd,40.861947999999998,-73.893726000000001
-Bronx,Subproperty,French Charley Playground,"E 204 St, W/S Bronx Park",40.869996,-73.876238
-Bronx,Greenthumb,Hornaday Community Garden (volky Flower Garden),851 Hornaday Avenue,40.847026,-73.882534
-Bronx,Outdoor ,HUB 3rd Ave,3 Ave & 149 St,40.816171,-73.917594
-Bronx,Outdoor ,Hunts Point,Hunt's Point Ave Btwn. Spofford Ave & Bryant Ave,40.814213,-73.885886
-Bronx,Indoor,Hunt's Point,Hunt's Point Ave Btwn. Spofford Ave & Bryant Ave,40.814213,-73.885886
-Bronx,Outdoor ,Hunt's point Riverside Park- Plgd - Parks,Lafayette Ave & Edgewater Rd,40.817471,-73.882622
-Bronx,Greenthumb,Isla Verde Garden,625 Wales Avenue ,40.81484,-73.90691
-Bronx,Greenthumb,Jardin de las Rosas,15 Buchanan Place,40.858005,-73.90485
-Bronx,Outdoor ,Joyce Kilmer,E 164 St Btwn. Grand Concourse & Walton Ave,40.829632,-73.921933
-Bronx,Outdoor ,Joyce Kilmer,E 164 St Btwn. Grand Concourse & Walton Ave,40.827502,-73.923062
-Bronx,Indoor,Kingsbridge Heights Community Center,3101 Kingsbridge Ave,40.877667,-73.90062
-Bronx,Greenthumb,Las Casitas Communitiy Garden,1126-1140 Woodycrest Avenue ,40.835694,-73.925664
-Bronx,Greenthumb,Little Green Garden (3) Large lower expanse,E 160th St and Elton Ave,40.8229705286,-73.9128832182
-Bronx,Outdoor ,Mill Pond,Mill Pond Park,40.822992396899998,-73.931892542900002
-Bronx,Outdoor ,Mullaly,E 165 St Btwn. Jerome Ave & River Ave,40.834258,-73.923392
-Bronx,Outdoor ,Mullaly,E 165 St Btwn. Jerome Ave & River Ave,40.831466,-73.923947
-Bronx,Outdoor ,Muskrat Playground,Bronx Park,40.8415557191,-73.877522673900003
-Bronx,Greenthumb,New Hoe Avenue Garden,"E/S Hoe Ave., S/O/ Aldus Street ",40.822711,-73.890242
-Bronx,Subproperty,Niles Triangle,Bronx Park,40.889428,-73.864356
-Bronx,Outdoor ,Noble Playground,Noble Ave Btwn. Bronx River Ave & E 177 St,40.836706,-73.872355
-Bronx,Outdoor ,Nursery,Van Cortlandt Park,40.90208,-73.868519
-Bronx,Subproperty,Olinville,Bronx Blvd & E 219 St,40.884079,-73.866996
-Bronx,Outdoor ,"Orchard Beach picnic areas, basketball ct, Pelham playground, Nature Center, Boathouse",Orchard Beach,40.866292,-73.794774
-Bronx,Outdoor ,"Orchard Beach picnic areas, basketball ct, Pelham playground, Nature Center, Boathouse",Orchard Beach,40.867984,-73.793396
-Bronx,Outdoor ,"Orchard Beach picnic areas, basketball ct, Pelham playground, Nature Center, Boathouse",Orchard Beach,40.868802,-73.792261
-Bronx,Outdoor ,"Orchard Beach picnic areas, basketball ct, Pelham playground, Nature Center, Boathouse",Orchard Beach,40.869068,-73.792558
-Bronx,Outdoor ,"Orchard Beach picnic areas, basketball ct, Pelham playground, Nature Center, Boathouse",Orchard Beach,40.872275,-73.797323
-Bronx,Outdoor ,Owen Dolan,2551 Westchester Ave,40.840504,-73.842668
-Bronx,Outdoor,Owen Dolan,2551 Westchester Ave,40.840626,-73.843231
-Bronx,Outdoor ,P.O. Serrano,Olmstead Ave Btwn Turnbull Ave & Lafayette Ave ,40.82366,-73.850766
-Bronx,Outdoor ,Pearly Gates,St. Peter's Ave at Tratman Ave ,40.838797,-73.845791
-Bronx,Outdoor ,"Pelham Bay  Ball field, north picnic area",Pelham Bay Park,40.851723,-73.824697
-Bronx,Outdoor ,"Pelham Bay picnic, running track",Pelham Bay Park,40.849069,-73.822954
-Bronx,Outdoor ,Quarry Ballfield- Parks,"E 181 St, oak Tree Pl Btwn. Quarry Rd & Hughes Ave",40.850274,-73.88992
-Bronx,Greenthumb,River Garden,1086 East 180th Street,40.841884,-73.876389
-Bronx,Outdoor ,River Park,E 180 St & Boston Rd,40.842795,-73.877694
-Bronx,Outdoor,Riverdale Neighborhood House,5521 Mosholu Ave,40.903281,-73.903611999999995
-Bronx,Outdoor ,Rosehill Park- Parks,Webster Ave & E Fordham Rd,40.861953,-73.890736
-Bronx,Subproperty,Rosewood- Parks,Bronx River Pkwy & Rosewood St,40.873199,-73.87052
-Bronx,Subproperty,Sachkera Plgd – Parks,W Gunhill Rd & Knox Pl ,40.883881,-73.881691
-Bronx,Outdoor ,Seton Falls Park,E 223 St & De Reimer Ave,40.888353,-73.840908
-Bronx,Outdoor ,Seton Falls Park,3800 Baychester Ave,40.885219,-73.840474
-Bronx,Outdoor ,Skate Park at Allerton,Bronx Park East Btwn Britton St & Allerton Ave ,40.865657,-73.850613
-Bronx,Outdoor,Skyview Shopping Plaza,Skyview Shopping Plaza (Riverdale Ave & 259 St),40.906877999999999,-73.904143000000005
-Bronx,Outdoor ,Soundview – Parks,Lafayette Ave Btwn Colgate Ave & Boynton Ave ,40.819113,-73.878003
-Bronx,Outdoor ,Soundview – Parks,Metcalf Ave Btwn Lafayette Ave & Seward Ave ,40.819274,-73.870418
-Bronx,Outdoor ,Soundview – Parks,Metcalf Ave Btwn Seward Ave & Randall Ave,40.817335,-73.870322
-Bronx,Outdoor ,Soundview – Parks,Soundview Park,40.816505,-73.872564
-Bronx,Outdoor,Southern Blvd & E 173 St,Southern Blvd & 173 St,40.835693999999997,-73.888775999999993
-Bronx,Subproperty,Southwest Plgd – Parks,Van Cortlandt Park,40.886538,-73.898453
-Bronx,Outdoor ,Spuyton Duyvil plgd,Seton Park,40.887313,-73.916308
-Bronx,Indoor,St. James ,Jerome Ave,40.865469,-73.898571
-Bronx,Indoor,St. James ,Jerome Ave,40.864779,-73.899257
-Bronx,Indoor,St. James ,E 193 St,40.866089,-73.896967
-Bronx,Indoor,St. Mary's ,St. Anns Ave & E 145 St,40.811712,-73.914339
-Bronx,Indoor,St. Mary's ,St. Anns Ave & E 145 St,40.811588,-73.914342
-Bronx,Greenthumb,Sunflower Garden/Girasol,639 E. 137th Street,40.8053160148,-73.9153321204
-Bronx,Subproperty,"Van Cortlandt  ballfield, tennis and picnic",Broadway & Putnam Trail,40.887317,-73.899006
-Bronx,Subproperty,"Van Cortlandt  ballfield, tennis and picnic",Broadway & Van Cortlandt Park 242 St,40.888933,-73.898324
-Bronx,Subproperty,"Van Cortlandt  ballfield, tennis and picnic",Van Cortlandt Park,40.888224,-73.896655
-Bronx,Outdoor ,Van Cortlandt Park ,Van Cortlandt Park,40.890172,-73.896375
-Bronx,Subproperty,Van Cortlandt Stadium,Van Cortlandt Park,40.888255,-73.897777
-Bronx,Subproperty,Van Cortlandt Stadium,Van Cortlandt Park,40.889096,-73.892278
-Bronx,Outdoor ,Virginia Park,Cross Bronx Expwy Service Rd,40.833505,-73.86232
-Bronx,Greenthumb,Vogue Community Garden,431 E. 156th Street,40.8205708783,-73.9140313844
-Bronx,Subproperty,Waring Plgd,"Waring Ave, Bronx Park E",40.860641,-73.871488
-Bronx,Outdoor ,Watson & Gleason,Noble Ave Btwn Watson Ave & Gleason Ave,40.828933,-73.869326
-Bronx,Indoor,West Bronx Rec. Ctr,1527 Jesup Ave,40.844147,-73.918886
-Bronx,Subproperty,Woodlawn Tennis,Van Cortlandt Park,40.895803,-73.87943
-Brooklyn,Greenthumb,A Better Community Garden,762-764 Herkimer Place/13-21 Hunterfly,40.677973,-73.928171
-Brooklyn,Outdoor ,Asser Levy,Seaside Park,40.57519,-73.971342
-Brooklyn,Outdoor ,Asser Levy,Seaside Park,40.575239,-73.971889
-Brooklyn,Outdoor ,Bay Ridge,5 Ave & Bay Ridge Pkwy,40.629573000000001,-74.022531999999998
-Brooklyn,Outdoor ,Bensonhurst,Bensohurst Park,40.596833,-73.9994
-Brooklyn,Outdoor ,Boerum,Boerum Park,40.68463,-73.990234
-Brooklyn,Outdoor ,Brooklyn War Memorial,Brooklyn War Memorial,40.696536,-73.990675
-Brooklyn,Outdoor ,Brower,Park Pl Btwn Brooklyn Ave & Kingston Ave,40.673811,-73.943717
-Brooklyn,Indoor,Brownsville Rec Ctr,1555 Linden Blvd,40.656762,-73.90247
-Brooklyn,Outdoor ,Bushwick Inlet Field,Bushwick Inlet Park,40.722315,-73.961527
-Brooklyn,Outdoor ,Cadman Plaza,Korean War Veterans Plaze,40.695873,-73.990218
-Brooklyn,Outdoor ,Cadman Plaza,Brooklyn War Memorial,40.697327,-73.990337
-Brooklyn,Outdoor ,Carroll Park,President St,40.681307,-73.995212
-Brooklyn,Outdoor ,Carroll Park,Carroll St,40.680946,-73.995481
-Brooklyn,Outdoor ,City Line Park,Fountain Ave,40.679442,-73.876233
-Brooklyn,Outdoor ,Cobble hill park,Clinton St Btwn Congress St & Verandah Pl,40.688290000000002,-73.996136000000007
-Brooklyn,Outdoor ,Columbus Park,Columbus Park,40.694143,-73.989791
-Brooklyn,Outdoor ,Commodore Berry,Commodore Berry,40.697793,-73.978653
-Brooklyn,Outdoor ,Cuyler Gore Park,Greene Ave,40.685861,-73.972638
-Brooklyn,Outdoor ,David Marcus Plgd,Avenue P Btwn 4 St & 5 St,40.610033,-73.96952
-Brooklyn ,Outdoor ,Dumbo Brooklyn Heights,Front St & Washington St,40.702573,-73.989752
-Brooklyn ,Outdoor ,Dumbo Brooklyn Heights,Front St & Main St,40.702631,-73.990641
-Brooklyn ,Outdoor ,Dumbo Brooklyn Heights,Front St & Jay St,40.702379999999998,-73.986553000000001
-Brooklyn,Outdoor ,Dumbo Brooklyn Heights,Church Ave & Flatbush Ave,40.650210000000001,-73.958798000000002
-Brooklyn ,Outdoor ,FAB,Fulton & Washington Ave ,40.682929999999999,-73.964596
-Brooklyn,Outdoor,FAB,Fulton St & Lafayette/Greene/S Oxford,40.687092999999997,-73.976237999999995
-Brooklyn,Outdoor,FAB,Putnam Triangle,40.682555999999998,-73.961974999999995
-Brooklyn,Outdoor ,FAB ,Fulton & Lafayette ,40.687072000000001,-73.976557
-Brooklyn ,Outdoor ,FAB ,Fulton & Clinton Ave ,40.683557,-73.966797
-Brooklyn,Outdoor,FAB ,Lafayette & South Portland Ave,40.687207999999998,-73.974620999999999
-Brooklyn,Outdoor ,Fort Greene ,Washington Park & Dekalb Ave,40.689818,-73.9732
-Brooklyn,Indoor,Fort Hamilton Sr. Center,9941 Fort Hamilton Pkwy,40.613322,-74.030067
-Brooklyn,Greenthumb,Good Shepheard's Community Group,555-557 Shepherd Ave.,40.6707327095,-73.8796755721
-Brooklyn,Greenthumb,Gregory's Garden (P.S. 158 Memorial Garden,"444,448 Warwich Avenue",40.672659,-73.885742
-Brooklyn,Greenthumb,Hands  & Hearts(New Lots Urban Farm),New Lots Ave at Alabama Avenue,40.66101,-73.895627
-Brooklyn,Outdoor ,Harry Chapin Plgd,Hillside Park,40.700784,-73.995146
-Brooklyn,Greenthumb,Herbal Garden,582-590 Glenmore Ave.,40.674221,-73.888573
-Brooklyn,Outdoor ,JJ Byrne,4 St Btwn 4 Ave & 5 Ave,40.67269,-73.984796
-Brooklyn,Outdoor ,JJ Byrne,4 St Btwn 4 Ave & 5 Ave,40.673262,-73.984332
-Brooklyn,Outdoor ,Kaiser ,Neptune Ave,40.578225,-73.994834
-Brooklyn,Outdoor ,Kelly,Kelly Memorial Playground,40.603519,-73.957375
-Brooklyn,Outdoor ,Korean War Vet ,Cadman Plaza,40.695719,-73.990256
-Brooklyn,Outdoor ,Manhattan Beach +BBQ,Oriental Blvd,40.577672,-73.944616
-Brooklyn,Outdoor ,Manhattan Beach +BBQ,Oriental Blvd,40.577211,-73.946587
-Brooklyn,Outdoor ,Marine Park ,Marine Park,40.604084999999998,-73.930702999999994
-Brooklyn,Outdoor ,McCarren Park ,Bedford Ave ,40.721612,-73.953668
-Brooklyn,Outdoor ,McCarren Park ,Bedford Ave ,40.721535,-73.954114
-Brooklyn,Outdoor ,McCarren Park ,Driggs Ave,40.720622,-73.952488
-Brooklyn,Outdoor ,McCarren Park ,Driggs Ave & Lorimer St,40.721653,-73.950305
-Brooklyn,Outdoor ,McCarren Park ,McCarren Park,40.719973,-73.952215
-Brooklyn,Outdoor ,McCarren Park ,Bedford Ave ,40.72173,-73.953298
-Brooklyn,Outdoor ,McCarren Park ,N 12 St,40.721075,-73.955512
-Brooklyn,Outdoor ,McCarren Park ,Berry St,40.721933,-73.955283
-Brooklyn,Outdoor ,McGorlick Park,McGorlick Park,40.724446,-73.943326
-Brooklyn,Indoor,Metropolitan Rec Ctr ,261 Bedford Ave,40.715086,-73.960546
-Brooklyn,Outdoor,Metrotech,Willoughby St & Bridge St,40.692165000000003,-73.985247000000001
-Brooklyn,Outdoor ,Mt. Prospect plgd,Mt. Prospect Park,40.67207,-73.96598
-Brooklyn,Outdoor,Myrtle Ave BID,Myrtle Ave & Ashland Pl,40.693472999999997,-73.979168000000001
-Brooklyn,Outdoor,Myrtle Ave BID,Myrtle Ave & Adelphi St,40.693221999999999,-73.971886999999995
-Brooklyn,Outdoor,Myrtle Ave BID,Myrtle Ave & Clinton Ave,40.693126999999997,-73.968789999999998
-Brooklyn,Outdoor,Myrtle Ave BID,Myrtle Ave & Hall St,40.693455999999998,-73.965907999999999
-Brooklyn,Outdoor ,N. 5th St. pier,N. 5th St. pier,40.720628,-73.965524
-Brooklyn,Greenthumb,New Vision Garden,590-594 Schenck Avenue,40.6659,-73.887172
-Brooklyn,Outdoor ,Owl's Head,Owl's Head,40.639285,-74.031909
-Brooklyn,Outdoor ,Palato plgd,Manhattan Beach Park,40.577492,-73.946325
-Brooklyn,Outdoor ,Park Slope,7 Ave & 6 St,40.668796999999998,-73.980143999999996
-Brooklyn,Outdoor ,Park Slope Playground ,Berkeley Lincoln Playground ,40.676639,-73.978903
-Brooklyn,Outdoor ,Pierrepont Park,Pierrepon St,40.696389,-73.99734
-Brooklyn,Outdoor ,Prospect Park ,Prospect Park West,40.664608,-73.976666
-Brooklyn,Outdoor ,Prospect Park ,Prospect Park West,40.66132,-73.979593
-Brooklyn,Outdoor ,Prospect Park ,Ocean Ave,40.660478,-73.963187
-Brooklyn,Outdoor ,Prospect Park ,Ocean Ave,40.655183,-73.962214
-Brooklyn,Greenthumb,Red Gate Garden,604 Marcy Avenue,40.693761,-73.948972
-Brooklyn,Outdoor ,Red Hook Park,Red Hook Park,40.677265,-74.008353
-Brooklyn,Indoor,Salt marsh,3301 Avenue U,40.604374,-73.930741
-Brooklyn,Outdoor ,Shore Road Plgd,Shore Rd Park,40.617506,-74.040033
-Brooklyn,Outdoor ,South Oxport ,Oxport Playground,40.697746,-73.976199
-Brooklyn,Outdoor ,Squibb Park,Btwn Furman St & Columbia Heights,40.701079,-73.995307
-Brooklyn,Greenthumb,St. John Cantius,476-484 New Jersey Avenue,40.667491,-73.89384
-Brooklyn,Indoor,St. John's ,St. John's Park,40.673754,-73.934855
-Brooklyn,Greenthumb,St. Nicholas-Olive Street Garden,21-25 Olive Street ,40.713316,-73.938974
-Brooklyn,Outdoor,Starret City,1344 Pennsylvania Avenue,40.650143,-73.884371999999999
-Brooklyn,Outdoor ,Sternberg Park,Lorimer St,40.706315,-73.948025
-Brooklyn,Outdoor ,Sternberg Park,Boerum St,40.705616,-73.947172
-Brooklyn,Indoor,Sunset Park,5 Ave & 44 St,40.648468,-74.006771
-Brooklyn,Outdoor ,Sunset Park,5 Ave & 44 St,40.648479999999999,-74.006674000000004
-Brooklyn,Greenthumb,Ten Eyck Houses,15-17 Ten Eyck Street,40.709648,-73.950166
-Brooklyn,Greenthumb,"Triple R/Relaxation, Reflection, Revenue (Victoria Garden)",613 Hendrix Street ,40.666548,-73.887691
-Brooklyn,Greenthumb,UCC (United Community Centers) Youth Farm/East New York Farms,613 Schenck Avenue ,40.665324,-73.886769
-Brooklyn,Outdoor ,Underhill Playground,Underhill Ave & Prospect Pl,40.676766,-73.965902
-Brooklyn,Outdoor ,Underwood Playground,Underwood Park,40.688204,-73.966559
-Brooklyn,Greenthumb,Upon the Rock,2556 Pitkin Avenue.,40.674329,-73.877867
-Brooklyn,Greenthumb,Vernon (Throop Avenue Block Assoc.),253 Throop Avenue,40.695220999999997,-73.943263999999999
-Brooklyn,Greenthumb,Welcome Home,681 Halsey Street,40.684658,-73.925222
-Manhattan,Greenthumb,6BC Botanical Garden,624-628 E. 6th Street ,40.723831,-73.980677
-Manhattan,Outdoor,1 Centre Street,1 Centre Street,40.712187,-74.005701000000002
-Manhattan,Indoor,100 Centre St,100 Centre St,40.715826999999997,-74.000488000000004
-Manhattan,Outdoor,100 Centre Street ,100 Centre Street (South Entrance),40.715922999999997,-74.001447999999996
-Manhattan,Outdoor,100 Gold Street,100 Gold Street,40.710450000000002,-74.003754999999998
-Manhattan,Indoor,111 Centre St,111 Centre St,40.716396000000003,-74.001358999999994
-Manhattan,Outdoor,115 Chrystie St,115 Chrystie St (Outside Main Entrance),40.718604999999997,-73.993763000000001
-Manhattan,Outdoor ,125 St. BID,125 St & Lenox Ave,40.807944999999997,-73.945622999999998
-Manhattan,Outdoor,137 Centre Street ,137 Centre St (Centre St & White St),40.716940999999998,-74.000816
-Manhattan,Outdoor,2 Lafayette St ,2 Lafayette St (Lafayette St & Reade St),40.713608000000001,-74.003619
-Manhattan,Outdoor,22 Reade St,22 Reade St (Reade St & Elk St),40.714022999999997,-74.004472000000007
-Manhattan,Outdoor,280 Broadway,Broadway Btwn Reade St & Chambers St,40.714399,-74.006130999999996
-Manhattan,Indoor,346 Broadway,346 Broadway,40.716827000000002,-74.004185000000007
-Manhattan,Outdoor ,34th St,34 St & 7 Ave,40.750900999999999,-73.990842999999998
-Manhattan,Outdoor,49-51 Chambers Street ,49-51 Chambers Street (Outside Main Entrance),40.713679999999997,-74.005512999999993
-Manhattan,Outdoor,60 Lafayette St,60 Lafayette St (Lafayette & Leonard),40.716158,-74.002555000000001
-Manhattan,Indoor,60 Lafayette St,60 Lafayette St,40.716458000000003,-74.002466999999996
-Manhattan,Indoor,80 Centre St,80 Centre St,40.715387,-74.001773
-Manhattan,Outdoor ,96th St Train Station (under our supervision),96 St & Lexington Ave,40.785787,-73.951092
-Manhattan,Outdoor,96th St Train Station (under our supervision),96 St & Lexington Ave,40.785717,-73.950922
-Manhattan,Indoor,Al Smith Rec Ctr,80 Catherine St,40.710412,-73.996979
-Manhattan,Indoor,Asser Levy Rec Ctr,384 Asser Levy Pl,40.736271,-73.975508
-Manhattan,Outdoor ,Battery Park - DSNY Partnership,Battery Park ,40.704592,-74.016957
-Manhattan,Outdoor ,Battery Park City,Battery Park City,40.711576000000001,-74.016051000000004
-Manhattan,Outdoor ,Battery Park City,Battery Park City,40.705075000000001,-74.017115000000004
-Manhattan,Outdoor,Battery Park City,,40.711565,-74.015853000000007
-Manhattan,Outdoor ,Bayard St & Baxter St,100 Centre Street,40.716092000000003,-74.000134000000003
-Manhattan,Outdoor ,Bellevue South,Mt. Carmel Pl Btwn E 26 St & E 28 St,40.739982,-73.978053
-Manhattan,Outdoor ,Bennett Park,Bennett Park,40.852856,-73.938098
-Manhattan,Outdoor ,Bleecker St. Playground,W 11 St Btwn Hudson St & Bleecker St,40.736401,-74.005572
-Manhattan,Outdoor ,Broadway & Murray St,Outside Entrance,40.712938999999999,-74.007261999999997
-Manhattan,Outdoor ,Broadway & Park Place,Outside Plaza Entrance,40.712479999999999,-74.007642000000004
-Manhattan,Outdoor ,Bryant Park,Bryant Park,40.754390999999998,-73.983401999999998
-Manhattan,Outdoor ,Bryant Park - Bryant Park Corp.,Bryant Park,40.753954,-73.984092
-Manhattan,Outdoor ,Carl Shurz,Carl Shurz Park,40.77453,-73.943837
-Manhattan,Greenthumb,Carrie McCracken Garden/TRUCE,143-145 St. Nicholas Avenue ,40.804559,-73.952985
-Manhattan,Outdoor ,Centre St & Chambers St,31 Chambers Street,40.712795999999997,-74.004816000000005
-Manhattan,Outdoor ,Chelsea Park,Chelsea Park,40.749849,-74.000856
-Manhattan,Indoor,Chelsea Rec Center,430 W 25 St,40.748355,-74.002007
-Manhattan,Outdoor,Chelsea Waterside Park Field,Hudson River Park ,40.749349000000002,-74.007351
-Manhattan,Outdoor,Chelsea Waterside Park Playground,Hudson River Park ,40.749318000000002,-74.006980999999996
-Manhattan,Outdoor ,City Hall Park ,City Hall Park ,40.711834,-74.007124
-Manhattan,Outdoor ,City Hall Park ,City Hall Park ,40.712806,-74.004808
-Manhattan,Outdoor ,City Hall Park ,City Hall Park ,40.712896999999998,-74.007268999999994
-Manhattan,Outdoor ,City Hall Park ,City Hall Park ,40.712517,-74.007573
-Manhattan,Outdoor ,Coleman Square Playground,Coleman Square Playground,40.710746,-73.993819
-Manhattan,Outdoor ,Colonel Young,Colonel Charles Young Playground,40.819645,-73.936417
-Manhattan,Outdoor ,Columbus Park - DSNY Partnership,Columbus Park,40.71475,-74.000096
-Manhattan,Outdoor,Courtyard West ,Hudson River Park ,40.732377,-74.010734999999997
-Manhattan,Outdoor ,Crack is Wack,Harlem River Dr & 2 Ave ,40.804284,-73.931744
-Manhattan,Outdoor ,Desalvio,DeSalvio Playground,40.721757,-73.996052
-Manhattan,Outdoor,DSNY Main Office -Worth St,Centre Street,40.715110000000003,-74.002358999999998
-Manhattan,Outdoor,DSNY Main Office -Worth St,Lafayette Street,40.715356,-74.002984999999995
-Manhattan,Outdoor ,Each One Teach One,Lexington Ave & E 129 St,40.807191,-73.934751
-Manhattan,Outdoor ,East River Park- DSNY partnership,East River Bikeway,40.716205,-73.975494
-Manhattan,Outdoor ,Fashion BID,Broadway Btwn 39 St & 40 St,40.753937999999998,-73.986947000000001
-Manhattan,Outdoor ,Fashion BID,57 St & Lexington Ave,40.760841999999997,-73.969307000000001
-Manhattan,Outdoor ,Father Dumo Square,Father Demo Square,40.730225,-74.002246
-Manhattan,Outdoor ,Foley Square - DSNY Partnership,"Foley Square, Duane St",40.714357,-74.003085
-Manhattan,Outdoor ,Foley Square - DSNY Partnership,"Foley Square, Worth St",40.715167,-74.002599
-Manhattan,Outdoor ,Fred Johnson,7 Ave Btwn 150 St & 151 St,40.824847,-73.935623
-Manhattan,Outdoor ,Grand Central, 42 St & Lexington Ave,40.751691999999998,-73.975975000000005
-Manhattan,Outdoor ,Greenwich & Murray,270 Greenwich Street,40.715108999999998,-74.011381999999998
-Manhattan,Indoor,Hamilton Fish,Hamilton Fish Park,40.719937,-73.981432
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,Pitt St,40.720057,-73.981636
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.716618,-73.975256
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.717499,-73.974858
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.718372000000002,-73.974673999999993
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.718888,-73.974598
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.719832,-73.974488
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.721303,-73.974323
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.722911,-73.973828
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.723896,-73.973184
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.724113,-73.973016
-Manhattan,Outdoor ,Hamilton Fish Recreation Center,East River Bikeway,40.725238,-73.972364
-Manhattan,Indoor,Hansboro,35 W 134 St,40.812748,-73.939317
-Manhattan,Outdoor ,Harlem RBI – Community Group,333 E 100 St,40.78613,-73.943294
-Manhattan,Outdoor ,Harlem River Ballfield,Harlem River Park,40.806036,-73.934206
-Manhattan,Outdoor,Harrison St Basketball Court,Hudson River Park ,40.718741999999999,-74.013092
-Manhattan,Outdoor ,High Line Park,Washington St & Gansevoort St,40.739465000000003,-74.008161999999999
-Manhattan,Outdoor ,High Line Park,High Line Park,40.740850000000002,-74.008055999999996
-Manhattan,Outdoor ,High Line Park,High Line Park,40.743298000000003,-74.007034000000004
-Manhattan,Indoor,Highbridge,Washington Bridge,40.847983,-73.929251
-Manhattan,Outdoor ,Highline Entrance+Park,W 20 St,40.746041,-74.006109
-Manhattan,Outdoor ,Hudson River Park,Hudson River Park,40.731457,-74.010973
-Manhattan,Outdoor,Hudson River Park,14 St Park,40.742795000000001,-74.008032999999998
-Manhattan,Outdoor,Hudson River Park,Pier 62 Garden Area,40.748683999999997,-74.008825000000002
-Manhattan,Outdoor,Hudson River Park,Pier 62 Skate Park,40.748506999999996,-74.009282999999996
-Manhattan,Outdoor,Hudson River Park,Pier 51 Playground,40.738145000000003,-74.010417000000004
-Manhattan,Outdoor,Hudson River Park,Pier 84 (43 St Bike Shop),40.762839,-74.001011000000005
-Manhattan,Outdoor,Hudson River Park,Pier 66 Seating Area,40.751987,-74.008443
-Manhattan,Outdoor,Hudson River Park,Pier 95,40.770381,-73.995823999999999
-Manhattan,Outdoor,Hudson River Park,Pier 40 Courtyard & Tunel,40.728833000000002,-74.011899
-Manhattan,Outdoor,Hudson River Park,Tennis Courts,40.727097000000001,-74.011511999999996
-Manhattan,Outdoor,Hudson River Park,60 Centre Street,40.714666000000001,-74.002176000000006
-Manhattan,Outdoor,Hudson River Park,Battery Park Entrance (State St & Water St),40.702410999999998,-74.012878999999998
-Manhattan,Outdoor,Hudson River Park,Essex St & Delancy St,40.702350000000003,-74.014392999999998
-Manhattan,Outdoor,Hudson River Park,White Hall Ferry Terminal (Indoor & Outdoor),40.701307,-74.011998000000006
-Manhattan,Outdoor ,Imagination Playground,Imagination Playground,40.706124,-74.004217
-Manhattan,Outdoor ,Inwood Dyckman fields,Inwood Hill Park,40.87126,-73.930765
-Manhattan,Outdoor ,Inwood Dyckman fields,Inwood Hill Park,40.872594,-73.930199
-Manhattan,Outdoor ,Inwood Hill,Inwood Hill Park,40.867338,-73.929011
-Manhattan,Indoor,Inwood Hill Nature Center,218 St & Indian Rd,40.87303,-73.918427
-Manhattan,Outdoor ,J. Hood Wright,Jay Hood Wright Park,40.84637,-73.940825
-Manhattan,Indoor,J. Hood Wright,Jay Hood Wright Park,40.84696,-73.940028
-Manhattan,Indoor,Jackie Robinson,89 Bradhurst Ave,40.824297,-73.942288
-Manhattan,Outdoor ,Jackson Square,Jackson Square,40.738952,-74.002882
-Manhattan,Outdoor ,Jacob Javits Playground,Fort Tyron Park,40.859226,-73.934552
-Manhattan,Outdoor ,Jacob Schiff,Jacob Schiff Playground ,40.820071,-73.952107
-Manhattan,Outdoor ,John Jay Park,John Jay Park,40.769445,-73.949898
-Manhattan,Greenthumb,"Life Spire (CRMD, Inc.)",2015 Lexington Avenue ,40.802588,-73.938468
-Manhattan,Outdoor ,Lincoln Square,Broadway & 66 St,40.773715000000003,-73.981956999999994
-Manhattan,Outdoor,Lincoln Square,Broadway & 63 St ,40.771372,-73.982072000000002
-Manhattan,Greenthumb,Maggie's Garden,1547 Lexington Ave,40.828677,-73.948059
-Manhattan,Outdoor ,McCaffry Plgd – Parks,W 43 St Btwn 8 & 9 Ave,40.758977,-73.991396
-Manhattan,Greenthumb,Mobilization for Change Community Garden,955 Columbus Avenue ,40.799707,-73.962203
-Manhattan,Outdoor ,Morningside Park,W 116 St,40.805621,-73.958455
-Manhattan,Outdoor ,Morningside Park,Morningside Ave,40.80413,-73.958298
-Manhattan,Outdoor ,Morningside Park,W 113 St,40.803133,-73.958336
-Manhattan,Outdoor ,Morningside Park,Morningside Dr,40.801921,-73.960854
-Manhattan,Greenthumb,Morris Jumel Ecological Garden,455-457 W 162nd Street ,40.835708,-73.939122
-Manhattan,Outdoor ,Museum of Natural History/Planitarium,W 79 St & Columbus Ave,40.781936,-73.97542
-Manhattan,Outdoor ,Museum of Natural History/Planitarium,W 78 St & Columbus Ave,40.781265,-73.975927
-Manhattan,Outdoor ,Museum of Natural History/Planitarium,Central Park West,40.780558,-73.972924
-Manhattan,Outdoor ,Museum of Natural History/Planitarium,W 81 St Loop,40.782175,-73.972256
-Manhattan,Outdoor ,Museum of Natural History/Planitarium,W 81 St Loop,40.782665999999999,-73.973214999999996
-Manhattan,Greenthumb,Our Little Green Acres (Garden Eight),275-277 W. 122nd St.,40.808183,-73.95205
-Manhattan,Outdoor ,Park Row & Beekman Street,Outside Plaza  Entrance,40.711826000000002,-74.007142000000002
-Manhattan,Greenthumb,Parks Council Success Garden- P.S. 175 I.S. 275,116-122 West 134th Street ,40.814478,-73.943498
-Manhattan,Subproperty,Payson Playground,Inwood Hill Park,40.867205,-73.929121
-Manhattan,Indoor,Pelham Fritz,18 Mount Morris Park,40.805463,-73.946284
-Manhattan,Outdoor,Pier 25,"Pier 25 West End, Hudson River Park",40.720478,-74.016222999999997
-Manhattan,Outdoor,Pier 25,Hudson River Park ,,
-Manhattan,Outdoor,Pier 25 Mini Golf & Skate Park,Hudson River Park ,40.720176000000002,-74.013948999999997
-Manhattan,Outdoor,Pier 25 Playground,"Pier 25 Playground West Gate, Hudson River Park",40.719714000000003,-74.012943000000007
-Manhattan,Outdoor,Pier 40,"Pier 40 Courtyard & Tunnel, Hudson River Park",40.729170000000003,-74.011317000000005
-Manhattan,Outdoor,Pier 40 Dog Run,"Pier 40, Hudson River Park",40.730379999999997,-74.011004999999997
-Manhattan,Outdoor,Pier 40 Roof,"Pier 40, Hudson River Park",40.728828,-74.011903000000004
-Manhattan,Outdoor,Pier 45,Hudson River Park ,40.732970999999999,-74.010874999999999
-Manhattan,Outdoor,Pier 57,Hudson River Park ,40.743409999999997,-74.009
-Manhattan,Outdoor,Pier 84 (44 St Park Building),Hudson River Park ,40.763247,-74.000041999999993
-Manhattan,Greenthumb,Pleasant Village Community Garden,342-353 Pleasant Ave./502 E. 119th Street,40.796609,-73.931602
-Manhattan,Outdoor,Promenade South,Hudson River Park ,40.707656,-74.015975999999995
-Manhattan,Indoor,Rec Center  54,E 54 St Btwn 1 Ave & 2 Ave,40.756564,-73.965043
-Manhattan,Outdoor ,Riverside Park- Plgd @ 83rd St.,Riverside Park,40.787059,-73.982257
-Manhattan,Outdoor ,Rucker Park-parks,155 St & Frederick Douglass Blvd,40.829744,-73.936431
-Manhattan,Outdoor ,Sara D. Roosevelt,Chrystie St,40.721035,-73.991596
-Manhattan,Outdoor ,Seward park,Seward park,40.714603,-73.990111
-Manhattan,Greenthumb,Sixth St. & Ave. B,78-92 Avenue B,40.724254,-73.982088
-Manhattan,Outdoor ,Soho Parnership,Broadway &  Prince St ,40.724319000000001,-73.997827999999998
-Manhattan,Outdoor ,Soho Partnership,Spring St & Lafayette St,40.722270000000002,-73.997287
-Manhattan,Outdoor ,St. Catherine's ,St. Catherine's Park,40.76512,-73.958509
-Manhattan,Outdoor ,St. Nicholas,135 St & St. Nicholas Ave,40.817272000000003,-73.948248000000007
-Manhattan,Outdoor ,St. Vartan's ,St. Vartan's Park,40.744858,-73.973764
-Manhattan,Outdoor ,Stuyvesant- Parks,East River Bikeway,40.73277,-73.97406
-Manhattan,Outdoor ,Thomas Jefferson,Jefferson Park,40.793412,-73.937115
-Manhattan,Outdoor ,Thomas Payne,Duane St & Centre St,40.714045,-74.003135
-Manhattan,Outdoor ,Thomas Payne,Duane St & Lafayette St,40.714224,-74.003285
-Manhattan,Outdoor ,Thomas Payne,Centre St & Worth St,40.715059,-74.002355
-Manhattan,Outdoor ,Thomas Payne,Lafayette St & Worth St,40.715355,-74.002982
-Manhattan,Outdoor ,Times Square,42 St Btwn Broadway & 7 Ave,40.755913999999997,-73.986711999999997
-Manhattan,Outdoor ,Tompkins Square Park,Avenue A & E 7 St,40.72603,-73.983353
-Manhattan,Outdoor ,Tompkins Square Park,Avenue A & St. Mark's Pl,40.726599,-73.982985
-Manhattan,Outdoor ,Tompkins Square Park,Avenue B & E 8 St,40.725698,-73.980843
-Manhattan,Indoor,Tony Dapolito,1 Clarkson St,40.729474,-74.005489
-Manhattan,Outdoor ,Tribeca Partnership,Greenwich & North Moore,40.719979000000002,-74.010272000000001
-Manhattan,Outdoor ,Union Square ,Union Square Park,40.735243,-73.991012
-Manhattan,Outdoor ,Union Square ,Union Square Park,40.735219,-73.991603
-Manhattan,Outdoor ,Union Square ,Union Square Park,40.735292,-73.991614
-Manhattan,Outdoor ,Union Square ,Union Square Park,40.737023,-73.990324
-Manhattan,Outdoor ,Union Square ,Union Square Park,40.736535,-73.989754
-Manhattan,Outdoor ,Union Square ,Union Square Park,40.736122,-73.98963
-Manhattan,Outdoor ,Union Square ,Union Square Park,40.73534,-73.990127
-Manhattan,Outdoor ,Verdi Square,Verdi Square,40.77878,-73.981788
-Manhattan,Outdoor ,Vesuvio Playground,Thompson St,40.72534,-74.002324
-Manhattan,Outdoor ,Wall Street (South/Front),107 Wall Street,40.704695000000001,-74.006729000000007
-Manhattan,Outdoor ,Wall Street (Water/Front),100 Wall Street,40.704918999999997,-74.007084000000006
-Manhattan,Outdoor ,Warren & Greenwich,270 Greenwich Street,40.715575000000001,-74.011301000000003
-Manhattan,Outdoor ,Washington Market Playground,Washington Market Park,40.717298,-74.011001
-Manhattan,Outdoor ,Washington Square Park,Washington Square Park,40.729689,-73.99662
-Manhattan,Greenthumb,West 124th Street Community Garden,West 124th Street and 5th Avenue ,40.806938,-73.945301
-Manhattan,Outdoor ,West 4th St. Courts (PLGD),6 Ave Btwn W 3 St & W 4 St,40.731315,-74.000988
-Manhattan,Outdoor ,West End Avenuw,West End Ave & 86 St,40.788756999999997,-73.977788000000004
-Manhattan,Outdoor ,Whitehall Ferry Terminal,State Street outside Whitehall Ferry Terminal ,40.702334999999998,-74.014384000000007
-Queens,Indoor,A.R.R.O.W. Field house,35-30 35 St,40.755803,-73.926310000000001
-Queens,Outdoor ,Abe Wolfson,,40.728344,-73.815158999999994
-Queens,Outdoor ,Addabo Park,Addabo Park,40.673136999999997,-73.854609999999994
-Queens,Indoor,Al Oerter Rec Center ,131-40 Fowler Ave,40.751418000000001,-73.833843000000002
-Queens,Indoor,Alley Pond Environmental,22806 Northern Blvd,40.762689999999999,-73.753297000000003
-Queens,Subproperty,"Alley Springfield, picnic and athletic",Alley Pond Park,40.740062999999999,-73.734290999999999
-Queens,Subproperty,"Alley Springfield, picnic and athletic",Alley Pond Park,40.739522999999998,-73.734881000000001
-Queens,Subproperty,"Alley Springfield, picnic and athletic",Alley Pond Park,40.739294999999998,-73.735872999999998
-Queens,Subproperty,"Alley Springfield, picnic and athletic",Alley Pond Park,40.738985999999997,-73.737665000000007
-Queens,Subproperty,"Alley Springfield, picnic and athletic",Alley Pond Park,40.739758000000002,-73.735460000000003
-Queens,Outdoor ,Astoria Park,Astoria Park S,40.776788000000003,-73.927530000000004
-Queens,Outdoor ,Austin E,Ehrenreich-Austin Playground,40.715851000000001,-73.836995000000002
-Queens,Greenthumb,B.C.C.A. Mini-Park and Garden,150-14 115th Drive ,40.683453,-73.79213
-Queens,Outdoor ,Baisley Pond Park,155 St & 125 Ave,40.675268000000003,-73.786905000000004
-Queens,Outdoor ,Baisley Pond Park,Lakeview Blvd & 118 Ave,40.682417999999998,-73.785392000000002
-Queens,Outdoor ,Baisley Pond Park,155 St & 118 Ave,40.681365999999997,-73.787853999999996
-Queens,Outdoor ,Bland Playground,Bland Playground,40.758381,-73.831007999999997
-Queens,Greenthumb,Block Association #81,Inwood Stree between Lakewood & Shore Aves,40.690593999999997,-73.803821999999997
-Queens,Outdoor ,Brookville Park,143 Ave,40.663460000000001,-73.741328999999993
-Queens,Outdoor ,Brookville Park,232 St,40.661051,-73.746639000000002
-Queens,Outdoor ,Brookville Park,147 Ave,40.657674,-73.748388000000006
-Queens,Subproperty,Buzz O'Rourke Playground,Crocheron Park,40.770752999999999,-73.771739999999994
-Queens,Outdoor ,Byrne Park,135 Ave btwn 131 St & 132 St,40.667504999999998,-73.807496
-Queens,Outdoor ,Captain Tilly,Captain Tilly Park,40.712529000000004,-73.799377000000007
-Queens,Subproperty,Charybdis plgd,Astoria Park,40.779896999999998,-73.922391000000005
-Queens,Outdoor ,Crocheron Park,33 Rd & 215 Pl,40.772080000000003,-73.769437999999994
-Queens,Greenthumb,Culinary Kids,30-15 Seagirt Blvd. @ Beach 31st Street,40.595548000000001,-73.762265999999997
-Queens,Outdoor ,Cunningham Ballfields,Cunningham Park,40.736722,-73.770538000000002
-Queens,Outdoor ,Cunningham Ballfields,Cunningham Park,40.735230000000001,-73.772082999999995
-Queens,Outdoor ,Cunningham Picnic,Cunningham Park,40.730966000000002,-73.772458
-Queens,Outdoor ,Cunningham Soccer,Cunningham Park,40.73836,-73.764990999999995
-Queens,Outdoor ,Cunningham tennis courts,Cunningham Park,40.730117,-73.7727
-Queens,Outdoor ,Cunningham tennis courts,Cunningham Park,40.729498999999997,-73.772887999999995
-Queens,Outdoor ,Detective Keith Williams,Detective Keith Williams Park,40.701915,-73.783477000000005
-Queens,Outdoor ,Elmhurst Park,Elmhurst Park,40.730193,-73.885301999999996
-Queens,Outdoor ,Flushing Meadows Corona Park,United Nations Ave S,40.744249000000003,-73.844067999999993
-Queens,Outdoor ,Flushing Meadows Corona Park,Amphitheater Bridge,40.740388000000003,-73.841879000000006
-Queens,Outdoor ,Flushing Meadows Corona Park,Meadow Lake Trail E,40.737039000000003,-73.837856000000002
-Queens,Outdoor ,Flushing Meadows Corona Park,Dinosaur Playground,40.735168999999999,-73.843434999999999
-Queens,Outdoor ,Flushing Meadows Corona Park,Meadow Lake Trail W,40.7333,-73.841976000000003
-Queens,Outdoor ,Flushing Meadows Corona Park,Baseball Field 13,40.728112000000003,-73.835592000000005
-Queens,Outdoor ,Flushing Meadows Corona Park,Unisphere,40.746639000000002,-73.844583
-Queens,Outdoor ,Flushing Meadows Corona Park,"Field 2, Avenue of Commerce",40.749150999999998,-73.840065999999993
-Queens,Indoor,Flushing Meadows Pool,Avery Ave & 131 St,40.751882000000002,-73.837458999999996
-Queens,Outdoor ,Forest Park,Bandshell,40.698413000000002,-73.857671999999994
-Queens,Outdoor,Forest Park,Tennis Courts,40.697470000000003,-73.856663999999995
-Queens,Outdoor,Forest Park,Dog Run,40.696640000000002,-73.860343999999998
-Queens,Outdoor,Forest Park,Woodhaven Blvd & Park Lane S,40.697989999999997,-73.853295000000003
-Queens,Outdoor,Forest Park,Victory Field Soccer & Running Track,40.701853999999997,-73.853144999999998
-Queens,Outdoor,Forest Park,Victory Field Baseball,40.702292999999997,-73.854765
-Queens,Outdoor,Forest Park,Myrtle Ave & Park Lane S,40.701272000000003,-73.841921999999997
-Queens,Outdoor ,Fort Totten,Weaver Rd & Totten Ave,40.792357000000003,-73.777012999999997
-Queens,Outdoor,Fort Totten,North Loop,40.794781,-73.779207
-Queens,Outdoor,Fort Totten,Story Rd,40.792085,-73.774356999999995
-Queens,Greenthumb,George Eagle Carr Community Garden,148th Street ,40.692405999999998,-73.794745000000006
-Queens,Outdoor ,Glendale Playground,Glendale Playground,40.704591000000001,-73.881944000000004
-Queens,Outdoor ,Greenthumb compound,10 St & Queens Plaza S,40.753635000000003,-73.947614999999999
-Queens,Outdoor ,Grover Cleveland,Cleveland Park,40.710068999999997,-73.911456000000001
-Queens,Outdoor,Grover Cleveland,Cleveland Park,40.71031,-73.911062999999999
-Queens,Outdoor ,Hoffman Park,Hoffman Park,40.733134999999997,-73.871233000000004
-Queens,Outdoor,Hoffman Park,Hoffman Park,40.733142999999998,-73.871426999999997
-Queens,Outdoor,Hoffman Park,Hoffman Park,40.733068000000003,-73.870885000000001
-Queens,Outdoor,Hoffman Park,Hoffman Park,40.732937999999997,-73.870915999999994
-Queens,Outdoor,Hoffman Park,Hoffman Park,40.732700999999999,-73.871081000000004
-Queens,Outdoor,Hoffman Park,Hoffman Park,40.733203000000003,-73.871821999999995
-Queens,Outdoor,Juniper Valley Park,Juniper Valley Park,40.720689,-73.877521000000002
-Queens,Outdoor,Juniper Valley Park,Juniper Valley Park,40.720412000000003,-73.876474000000002
-Queens,Outdoor,Juniper Valley Park,Juniper Valley Park,40.719988000000001,-73.884692999999999
-Queens,Outdoor,Juniper Valley Park,Juniper Valley Park,40.719841000000002,-73.882970999999998
-Queens,Outdoor ,Kissena Park,Booth Memorial Ave ,40.742502000000002,-73.810260999999997
-Queens,Outdoor,Kissena Park,Lithonia Ave ,40.749228000000002,-73.803657999999999
-Queens,Outdoor,Kissena Park,Kissena Velodrome,40.744148000000003,-73.809332999999995
-Queens,Outdoor,Kissena Park,Booth Memorial Ave ,40.742364000000002,-73.808518000000007
-Queens,Outdoor,Kissena Park,Rose Ave,40.747886999999999,-73.809764999999999
-Queens,Indoor,LBH Rec Center,93-29 Queens Blvd,40.732225999999997,-73.86515
-Queens,Outdoor ,Marie Curie Playground,Marie Curie Park,40.757266000000001,-73.770977999999999
-Queens,Outdoor ,McDonald Park,McDonald Park,40.721814999999999,-73.845511000000002
-Queens,Outdoor,McDonald Park,McDonald Park,40.722011999999999,-73.846080000000001
-Queens,Outdoor,McDonald Park,McDonald Park,40.722479999999997,-73.847476999999998
-Queens,Indoor,Parks Academy,Flushing Meadows Corona Park,40.751632000000001,-73.843676000000002
-Queens,Indoor,Passerelle ,Flushing Meadows Corona Park,40.751632000000001,-73.843676000000002
-Queens,Indoor,Passerelle - Aquatics,Flushing Meadows Corona Park,40.750332999999998,-73.844099999999997
-Queens,Outdoor ,Phil Rizzuto Park ,Phil Rizzuto Park ,40.694406999999998,-73.822115999999994
-Queens,Subproperty,Playground for All Children,Flushing Meadows Corona Park,40.740882999999997,-73.849317999999997
-Queens,Outdoor ,Pomonok Playground,Pomonok Playground,40.736170999999999,-73.814014
-Queens,Indoor,Queens Hall of Science,47-01 111 St,40.747126999999999,-73.852214000000004
-Queens,Indoor,Queens Museum,"New York City Building, Flushing Meadows Corona Park",40.745793999999997,-73.846728999999996
-Queens,Indoor,Queens Theatre,14 United Nations Ave S,40.744152,-73.844476
-Queens,Indoor,Queens Zoo,53-51 111 St,40.743599000000003,-73.850354999999993
-Queens,Outdoor ,Rainey park,Rainey Park,40.765644000000002,-73.941158999999999
-Queens,Outdoor ,Rockaway Beach ,B 105 St Boardwalk,40.580753999999999,-73.824935999999994
-Queens,Outdoor,Rockaway Beach ,B 102 St Boardwalk,40.581400000000002,-73.823376999999994
-Queens,Outdoor,Rockaway Beach ,B 100 St Boardwalk,40.582137000000003,-73.820126999999999
-Queens,Outdoor,Rockaway Beach ,B 99 St Boardwalk,40.582478999999999,-73.819096999999999
-Queens,Outdoor,Rockaway Beach ,B 97 St Boardwalk,40.582825,-73.817858000000001
-Queens,Outdoor,Rockaway Beach ,B 95 St Boardwalk,40.583412000000003,-73.815483999999998
-Queens,Outdoor,Rockaway Beach ,B 91 St Boardwalk,40.584150000000001,-73.812472
-Queens,Outdoor,Rockaway Beach ,B 90 St Boardwalk,40.584400000000002,-73.811254000000005
-Queens,Outdoor,Rockaway Beach ,B 81 St Boardwalk,40.585825999999997,-73.807265000000001
-Queens,Outdoor,Rockaway Beach ,Bayside Pl Boardwalk,40.585104999999999,-73.809223000000003
-Queens,Outdoor ,Rocket Park ,Rocket Park ,40.670613000000003,-73.846256999999994
-Queens,Outdoor ,Roy Wilkens,Baisley Blvd,40.685918000000001,-73.769315000000006
-Queens,Outdoor,Roy Wilkens,Roy Wilkens ,40.688248999999999,-73.773573999999996
-Queens,Outdoor,Roy Wilkens,115 Ave & 175 St,40.691011000000003,-73.774207000000004
-Queens,Outdoor ,Socrates Park,Socrates Park,40.768028999999999,-73.936159000000004
-Queens,Indoor,Sorrentino ,1848 Cornaga Ave,40.602280999999998,-73.751564000000002
-Queens,Outdoor ,Southern Fields ,Southern Pkwy,40.665379000000001,-73.824555000000004
-Queens,Outdoor,Southern Fields ,Southern Pkwy,40.665627000000001,-73.826702999999995
-Queens,Outdoor ,St. Michaels,St. Michael's Playground,40.758218999999997,-73.900278
-Queens,Outdoor ,Steinway St,BW 34 St & Broadway,40.758155000000002,-73.919785000000005
-Queens,Outdoor ,Sunnyside Garden Park,Sunnyside Garden Park,40.749844000000003,-73.914749999999998
-Queens,Outdoor ,Sunnyside Garden Park,Sunnyside Garden Park,40.749547,-73.915139999999994
-Queens,Outdoor ,Sunnyside Garden Park,Sunnyside Garden Park,40.749687000000002,-73.914270000000002
-Queens,Outdoor ,Travers Park,Travers Park,40.754243000000002,-73.889364999999998
-Queens,Subproperty,Underhill,Cunningham Park,40.741627999999999,-73.777361999999997
-Queens,Greenthumb,William Simmons Community Garden Club,173 St,40.701650999999998,-73.783150000000006
-Queens,Indoor,World ice rink,Flushing Meadows Corona Park,40.751913999999999,-73.837320000000005
-Staten Island,Subproperty,Berry Homes ballfield,"Gen. Douglas Macarthur Park, Dongan Hills Ave",40.587445,-74.100364
-Staten Island,Subproperty,Berry Homes ballfield,"Gen. Douglas Macarthur Park, Dongan Hills Ave",40.586439,-74.100257
-Staten Island,Outdoor,150 St,New Dorp Lane & S Railroad Ave,40.574036,-74.116626999999994
-Staten Island,Outdoor ,Bloomingdale Playgound,"Bloomingdale Park, Lenevar Ave & Ramona Ave",40.53514,-74.208524
-Staten Island,Outdoor ,Bloomingdale Playgound,Bloomingdale Park ,40.533819,-74.210241
-Staten Island,Outdoor ,Bloomingdale Playgound,"Bloomingdale Park, Richmond Pkwy & Lenevar Ave",40.531521,-74.207153
-Staten Island,Outdoor ,Bloomingdale Playgound,Bloomingdale Park ,40.535174,-74.210125
-Staten Island,Outdoor ,Cedar Grove Beach,Cedar Grove Beach,40.557382,-74.10392
-Staten Island,Outdoor ,Cedar Grove Beach,Cedar Grove Beach,40.560272,-74.10104
-Staten Island,Indoor,Clove lake garage complex,Clove Lake Park,40.620135,-74.118801
-Staten Island,Indoor,Clove lake garage complex,Clove Lake Park,40.618744,-74.118278
-Staten Island,Outdoor ,Cloves Lake,Clove Lake Park,40.613891,-74.113523
-Staten Island,Outdoor ,Corporal Thompson Playground,CPL Thompson Park,40.637872,-74.118791
-Staten Island,Indoor,DeMatti Playground,Thompkins Ave Btwn Chestnut Ave & Shaughnessy Ln,40.614615,-74.07412
-Staten Island,Indoor,Faber Pool,Faber Pool and Park,40.640999,-74.135418
-Staten Island,Indoor,Graniteville,Jennifer's Playground,40.6200556871,-74.1631154874
-Staten Island,Indoor,Greenbelt Nature Center,700 Rockland Ave,40.588496,-74.138918
-Staten Island,Outdoor ,Greenbelt Park ,,40.584516000000001,-74.125034999999997
-Staten Island,Indoor,Greenbelt Rec Ctr,501 Brielle Ave,40.593686,-74.135646
-Staten Island,Subproperty,John M. D'Amato Field,Miller Field,40.564469,-74.097531
-Staten Island,Indoor,Lyons Pool,Tompkinsville Play Center,40.637596,-74.074802
-Staten Island,Outdoor ,MacArthur Park,MacArthur Park,40.585877,-74.100975
-Staten Island,Outdoor ,Mahony Playground,Crescent Ave Btwn Jersey St & Beechwood Ave,40.643368,-74.086066
-Staten Island,Outdoor ,Midland Beach,Midland Playground,40.575019,-74.098706
-Staten Island,Outdoor ,Midland Beach,"Midland Field, Bedford Ave ",40.57669,-74.098663
-Staten Island,Outdoor ,Prall Playground,Forest Ave & Elizabeth St,40.628859,-74.118013
-Staten Island,Outdoor ,Silver Lake Dog Run,Silver Lake Park,40.627186,-74.091985
-Staten Island,Outdoor ,Silver Lake Tennis,Silver Lake Park,40.628358,-74.099058
-Staten Island,Outdoor ,South Beach,,40.579312999999999,-74.077687999999995
-Staten Island,Outdoor,Staten Island Ferry Terminal,Richmond Terrace,40.642709000000004,-74.075723999999994
-Staten Island,Outdoor ,Staten Island Ferry Terminal,Richmond Terrace,40.642324000000002,-74.075489000000005
-Staten Island,Outdoor ,Staten Island Ferry Terminal,Hyatt Ave,40.642302999999998,-74.076549
-Staten Island,Indoor,Tottenville Pool,Hylan Blvd,40.505646,-74.235477
-Staten Island,Outdoor ,Walker Park,Delafield Pl & Bard Ave,40.643799,-74.108845
-Staten Island,Outdoor ,Walker Park,Davis Ave & Livingston Ct,40.642843,-74.11032
-Staten Island,Outdoor ,Walker Park,Delafield Pl & Davis Ave,40.643449,-74.11046
-Staten Island,Outdoor ,Walker Park,Livingston Ct & bard Ave ,40.643343,-74.108641
-Staten Island,Indoor,West Brighton Pool,899 Henderson Ave ,40.637121,-74.119287
-Staten Island,Outdoor ,Willowbrook Park,Willowbrook Park,40.603832,-74.158697
-Staten Island,Outdoor ,Willowbrook Park,Willowbrook Park,40.603828,-74.16125
-Staten Island,Outdoor ,Wolfe's Pond,Wolfe's Pond,40.517368,-74.190913
-Staten Island,Outdoor ,Wolfe's Pond,Wolfe's Pond,40.518652000000003,-74.187309999999997
+﻿Location_ID,Sensor_Description,Sensor_Name,Installation_Date,Note,Location_Type,Status,Direction_1,Direction_2,Latitude,Longitude,Location
+2,Bourke Street Mall (South),Bou283_T,2009-03-30,,Outdoor,A,East,West,-37.81380668,144.96516718,"-37.81380668, 144.96516718"
+6,Flinders Street Station Underpass,FliS_T,2009-03-25,Upgraded on 8/09/21,Outdoor,A,North,South,-37.81911705,144.96558255,"-37.81911705, 144.96558255"
+8,Webb Bridge,WebBN_T,2009-03-24,,Outdoor,A,North,South,-37.82293543,144.9471751,"-37.82293543, 144.9471751"
+17,Collins Place (South),Col15_T,2009-03-30,Device is upgraded in 26/02/2020,Outdoor,A,East,West,-37.81362543,144.97323591,"-37.81362543, 144.97323591"
+21,155-161 Russell Street,Bourke155_T,2013-09-02,,Outdoor,A,North,South,-37.81267313,144.96788288,"-37.81267313, 144.96788288"
+23,Spencer St-Collins St (South),Col623_T,2013-09-02,"Pushbox Upgrade, 25/07/2023",Outdoor,A,East,West,-37.81909256,144.95452748,"-37.81909256, 144.95452748"
+25,Melbourne Convention Exhibition Centre,MCEC_T,2013-08-28,,Outdoor,A,East,West,-37.82401776,144.95604426,"-37.82401776, 144.95604426"
+29,St Kilda Rd-Alexandra Gardens,AG_T,2013-10-11,sensor upgraded from laser to 3D on 19/12/2019,Outdoor,A,North,South,-37.8199817,144.96872865,"-37.8199817, 144.96872865"
+30,Lonsdale St (South),Lon189_T,2013-10-14,"Pushbox Upgrade, 20/07/2023",Outdoor,A,East,West,-37.8112185,144.96656806,"-37.8112185, 144.96656806"
+35,Southbank,SouthB_T,2016-04-11,Device replaced with two new sensors on 15-4-21,Outdoor,A,East,West,-37.82018685,144.96508508,"-37.82018685, 144.96508508"
+37,Lygon St (East),Lyg260_T,2015-02-11,"Pushbox Upgrade, 30/06/2023. Move from 174 to 260 Lygon Street (12/08/2024)",Outdoor,A,North,South,-37.80107122,144.96704554,"-37.80107122, 144.96704554"
+40,Lonsdale St-Spring St (West),Spr201_T,2015-01-19,"Pushbox Upgrade, 03/08/2023",Outdoor,A,North,South,-37.80999341,144.97227587,"-37.80999341, 144.97227587"
+42,Grattan St-Swanston St (West),UM1_T,2015-04-15,,Outdoor,A,North,South,-37.80008566,144.96386412,"-37.80008566, 144.96386412"
+63,231 Bourke St,Bou231_T,2020-01-07,,Outdoor,A,East,West,-37.81333081,144.96675571,"-37.81333081, 144.96675571"
+66,State Library - New,QVN_T,2020-04-06,,Outdoor,A,North,South,-37.81057846,144.96444294,"-37.81057846, 144.96444294"
+67,Flinders Ln -Degraves St (South),FLDegS_T,2020-06-03,,Outdoor,A,East,West,-37.81688755,144.96562569,"-37.81688755, 144.96562569"
+70,Errol Street (East),Errol20_T,2020-10-12,,Outdoor,A,North,South,-37.80456984,144.94946228,"-37.80456984, 144.94946228"
+71,Westwood Place,WestWP_T,2020-10-16,,Outdoor,A,North,South,-37.81235775,144.97136962,"-37.81235775, 144.97136962"
+76,Macaulay Rd- Bellair St,KenMac_T,2021-02-20,,Outdoor,A,East,West,-37.79453803,144.93036194,"-37.79453803, 144.93036194"
+78,Harbour Esplanade (West) - Bike Path,HarEsB_T,2021-03-30,,Outdoor,A,North,South,-37.81471642,144.9446508,"-37.81471642, 144.9446508"
+92,Library at The Dock-South side,DocLib2_T,2015-06-05,,Indoor,A,,,-37.82016286,144.94039584,"-37.82016286, 144.94039584"
+99,Town Hall Visitor Centre,TownVis_T,2020-02-02,"Pushbox Upgrade, 03/08/2023",Indoor,A,,,-37.81462143,144.96623279,"-37.81462143, 144.96623279"
+104,Kathleen Syme Library Main,KatLib1_T,2018-02-02,,Indoor,A,,,-37.79863553,144.96548206,"-37.79863553, 144.96548206"
+106,Kathleen Syme Library Cafe,KatLib3_T,2018-02-02,,Indoor,A,,,-37.79859459,144.96510921,"-37.79859459, 144.96510921"
+108,William St - Little Lonsdale St (West),261Will_T,2022-10-08,,Outdoor,A,In,Out,-37.81295822,144.95678789,"-37.81295822, 144.95678789"
+108,William St - Little Lonsdale St (West),261Will_T,2022-10-08,,Outdoor,A,North,InOut,-37.81295822,144.95678789,"-37.81295822, 144.95678789"
+118,114 Flinders Street Car Park Crossing,Fli114C_T,2022-12-06,,Outdoor,A,North,South,-37.81632783,144.97090512,"-37.81632783, 144.97090512"
+130,I-Hub 892 Bourke Street,Bou892T,2023-09-25,,Outdoor,A,East,West,-37.8204637,144.94126826,"-37.8204637, 144.94126826"
+131,I-Hub Corner of King Street and Flinders Street (2-6 King),King2_T,2023-09-25,,Outdoor,A,North,South,-37.82009057,144.95758725,"-37.82009057, 144.95758725"
+134,I-Hub Southern Cross Station - Bourke Street Entrance - North,Spen201_T,2023-09-25,,Outdoor,A,North,South,-37.81694221,144.95303935,"-37.81694221, 144.95303935"
+143,"Mounted on Toilet - Spencer Street, Batman Park",Spencer_T,2024-04-10,,Outdoor,A,North,South,-37.821728,144.95557015,"-37.821728, 144.95557015"
+145,narrm ngarrgu Library - Level 1 - Lift 2,narrLibL1L2_T,2023-10-23,,Indoor,A,,,-37.80763871,144.95850722,"-37.80763871, 144.95850722"
+147,narrm ngarrgu Library - Level 1 - Meeting Room Lift 1,narrLibMRL1_T,2023-10-23,,Indoor,A,,,-37.80769805,144.95832131,"-37.80769805, 144.95832131"
+152,narrm ngarrgu Library - Level 2 - Study Area Lifts 1,narrLibL2S1_T,2023-10-23,,Indoor,A,,,-37.80776728,144.95843977,"-37.80776728, 144.95843977"
+159,516 Elizeberth Street,Eli516_T,2024-01-29,,Indoor,A,,,-37.80651646,144.96007934,"-37.80651646, 144.96007934"
+162,iHub 489 Elizabeth Street,Eli489_T,2024-07-01,,Outdoor,A,North,South,-37.80740397,144.95987909,"-37.80740397, 144.95987909"
+166,484 Spencer Street,Spen484_T,2024-09-25,Former sensor 227 Bourke Street – City Lab,Outdoor,A,North,South,-37.80896733,144.94931703,"-37.80896733, 144.94931703"
+167,I-Hub 526 La Trobe Street (Crossing),Lat526_T,2024-08-14,,Outdoor,A,North,South,-37.81304149,144.95155955,"-37.81304149, 144.95155955"
+179,61-67 Power Street Southbank,Pow61_T,2024-12-19,,Outdoor,A,North,South,-37.82392385,144.96299677,"-37.82392385, 144.96299677"
+182,163 King Street,King163_T,2025-04-11,,Outdoor,A,In,Out,-37.81627451,144.95550503,"-37.81627451, 144.95550503"
+182,163 King Street,King163_T,2025-04-11,,Outdoor,A,North,InOut,-37.81627451,144.95550503,"-37.81627451, 144.95550503"
+182,163 King Street,King163_T,2025-04-11,,Outdoor,A,North,South,-37.81627451,144.95550503,"-37.81627451, 144.95550503"
+184,124 Elizabeth Street,Eli124_T,2025-06-28,,Outdoor,A,North,South,-37.81512416,144.96371988,"-37.81512416, 144.96371988"
+187,RMIT Building 22 - 330 Swanston Street,Swa330_T,2025-10-18,,Outdoor,A,East,West,-37.80942561,144.96395473,"-37.80942561, 144.96395473"
+3,Melbourne Central,Swa295_T,2009-03-25,,Outdoor,A,North,South,-37.81101524,144.96429485,"-37.81101524, 144.96429485"
+5,Princes Bridge,PriNW_T,2009-03-26,Replace with: 00:6e:02:01:9e:54,Outdoor,A,North,South,-37.81874249,144.96787656,"-37.81874249, 144.96787656"
+9,Southern Cross Station,Col700_T,2009-03-23,,Outdoor,A,East,West,-37.81982992,144.95102555,"-37.81982992, 144.95102555"
+12,New Quay,NewQ_T,2009-01-21,,Outdoor,A,East,West,-37.81457988,144.94292398,"-37.81457988, 144.94292398"
+14,Sandridge Bridge,SanBri_T,2009-03-24,Sensor relocated to sensor ID 25 on 2/10/2019,Outdoor,A,North,South,-37.82011242,144.96291897,"-37.82011242, 144.96291897"
+18,Collins Place (North),Col12_T,2009-03-30,,Outdoor,A,East,West,-37.81344862,144.97305353,"-37.81344862, 144.97305353"
+19,Chinatown-Swanston St (North),LtB210_T,2013-09-02,"Pushbox Upgrade, 20/07/2023",Outdoor,A,East,West,-37.81237202,144.96550671,"-37.81237202, 144.96550671"
+20,Chinatown-Lt Bourke St (South),LtB170_T,2013-09-06,"Pushbox Upgrade, 20/07/2023",Outdoor,A,East,West,-37.81172914,144.9682466,"-37.81172914, 144.9682466"
+27,QV Market-Peel St,Vic_T,2013-08-16,,Outdoor,A,East,West,-37.80606888,144.95644692,"-37.80606888, 144.95644692"
+28,The Arts Centre,VAC_T,2013-08-23,,Outdoor,A,North,South,-37.82129925,144.96879309,"-37.82129925, 144.96879309"
+41,Flinders La-Swanston St (West),Swa31,2017-06-29,,Outdoor,A,North,South,-37.81668634,144.96689733,"-37.81668634, 144.96689733"
+43,Monash Rd-Swanston St (West),UM2_T,2015-04-15,,Outdoor,A,North,South,-37.79844526,144.96411782,"-37.79844526, 144.96411782"
+44,Tin Alley-Swanston St (West),UM3_T,2015-04-15,"Pushbox Upgrade, 30/06/2023",Outdoor,A,North,South,-37.79698741,144.96441306,"-37.79698741, 144.96441306"
+46,Pelham St (South),Pel147_T,2017-07-10,,Outdoor,A,East,West,-37.80240719,144.9615673,"-37.80240719, 144.9615673"
+47,Melbourne Central-Elizabeth St (East),Eli250_T,2017-08-24,"Pushbox Upgrade, 25/07/2023. Move to 250 Elizabeth Street from adjacent St. Francis Church at 266 Elizabeth.",Outdoor,A,North,South,-37.81258467,144.9625775,"-37.81258467, 144.9625775"
+48,QVM-Queen St (East),QVMQ_T,2017-10-02,"Pushbox Upgrade, 03/07/2023",Outdoor,A,East,West,-37.80631581,144.95866697,"-37.80631581, 144.95866697"
+50,Faraday St-Lygon St (West),Lyg309_T,2017-11-30,"Pushbox Upgrade, 25/07/2023",Outdoor,A,North,South,-37.79808192,144.96721013,"-37.79808192, 144.96721013"
+51,QVM-Franklin St (North),Fra118_T,2017-11-30,"Pushbox Upgrade, 20/07/2023",Outdoor,A,East,West,-37.80841815,144.95906316,"-37.80841815, 144.95906316"
+52,Elizabeth St-Lonsdale St (South),Eli263_T,2017-07-31,"Pushbox Upgrade, 25/07/2023",Outdoor,A,East,West,-37.81252157,144.9619401,"-37.81252157, 144.9619401"
+53,Collins Street (North),Col254_T,2015-09-23,,Outdoor,A,East,West,-37.81564191,144.965499,"-37.81564191, 144.965499"
+54,Lincoln-Swanston (West),Swa607_T,2018-06-26,,Outdoor,A,North,South,-37.804024,144.96308399,"-37.804024, 144.96308399"
+55,380 Elizabeth Street,Eli380_T,2018-07-19,Moved to 368 Elizabeth Street,Outdoor,A,,,-37.80988941,144.96134331,"-37.80988941, 144.96134331"
+56,Lonsdale St - Elizabeth St (North),Lon364_T,2018-07-25,Sensor device has been replaced,Outdoor,A,East,West,-37.81234775,144.96153311,"-37.81234775, 144.96153311"
+68,Flinders Ln -Degraves St (North),FLDegN_T,2020-06-03,,Outdoor,A,East,West,-37.8168479,144.96559789,"-37.8168479, 144.96559789"
+69,Flinders Ln -Degraves St (Crossing),FLDegC_T,2020-06-03,,Outdoor,A,North,South,-37.81687226,144.96559144,"-37.81687226, 144.96559144"
+72,Flinders St- ACMI,ACMI_T,2020-11-30,,Outdoor,A,East,West,-37.81726338,144.96872809,"-37.81726338, 144.96872809"
+81,Boyd Commuinty - Front door,BoCoF_T,2021-03-30,,Indoor,A,,,-37.82579138,144.96084343,"-37.82579138, 144.96084343"
+82,512 Elizabeth Street,Eli512_T,2021-11-05,,Indoor,A,,,-37.80667227,144.96005554,"-37.80667227, 144.96005554"
+85,Macaulay Rd (North),488Mac_T,2021-12-21,,Outdoor,A,East,West,-37.79432415,144.92973378,"-37.79432415, 144.92973378"
+86,Queensberry St - Errol St (South),574Qub_T,2021-12-21,,Outdoor,A,East,West,-37.80309992,144.94908064,"-37.80309992, 144.94908064"
+89,City Library,CityLi_T,2013-12-11,,Indoor,A,,,-37.81685964,144.96586575,"-37.81685964, 144.96586575"
+90,Boyd Community Hub- Library,BoCoL_T,2015-08-11,,Indoor,A,,,-37.82556207,144.96115421,"-37.82556207, 144.96115421"
+93,East Melbourne Library,EastLib_T,2013-02-02,,Indoor,A,,,-37.81498411,144.98638807,"-37.81498411, 144.98638807"
+96,Fitzroy Garden Visitor Centre Internal,FitGarVisIInt_T,2015-03-02,"Pushbox Upgrade, 30/06/2023",Indoor,A,,,-37.81499687,144.97925064,"-37.81499687, 144.97925064"
+105,Kathleen Syme Library Lib,KatLib2_T,2018-02-02,,Indoor,A,,,-37.79861828,144.9652825,"-37.79861828, 144.9652825"
+107,Flagstaff station (East),280Will_T,2022-10-08,,Outdoor,A,North,South,-37.81246271,144.95690188,"-37.81246271, 144.95690188"
+116,Fitzroy Garden Visitor Centre Cafe Verandah,FitCafVis_T,2015-03-02,"Pushbox Upgrade, 30/06/2023",Indoor,A,,,-37.81493732,144.97932442,"-37.81493732, 144.97932442"
+117,114 Flinders Street Car Park Footpath,Fli114F_T,2022-12-06,,Outdoor,A,East,West,-37.81629332,144.97090877,"-37.81629332, 144.97090877"
+123,Birrarung Marr East - Batman Ave Bridge Entry,BirBridge_T,2023-06-02,<Null>,Outdoor,A,East,West,-37.81753741,144.97329734,"-37.81753741, 144.97329734"
+132,I-Hub Corner of King Street and Latrobe Street (317-335 King),King335_T,2023-09-25,,Outdoor,A,North,South,-37.81267639,144.95386444,"-37.81267639, 144.95386444"
+133,I-Hub Southern Cross Station - Lonsdale Street Entrance - South,Spen229_T,2023-09-25,,Outdoor,A,North,South,-37.81531435,144.95227769,"-37.81531435, 144.95227769"
+136,"COM Pole 1120 - Towards the City, Near Federation Square Bridge",BirFed1120_T,2023-11-03,,Outdoor,A,East,West,-37.8184141,144.97357915,"-37.8184141, 144.97357915"
+139,COM Pole 1647 - Sandridge Bridge Signal Box,Signal1647_T,2023-11-20,,Outdoor,A,East,West,-37.81959923,144.9632832,"-37.81959923, 144.9632832"
+140,COM Pole 2837 - Boyd Park,Boyd2837_T,2023-11-02,,Outdoor,A,North,South,-37.82590962,144.96185972,"-37.82590962, 144.96185972"
+142,COM Pole 1584 - Hammer Hall Entrance,Hammer1584_T,2023-11-03,,Outdoor,A,East,West,-37.81970749,144.96795734,"-37.81970749, 144.96795734"
+144,narrm ngarrgu Library - Level 1 - Lift 1,narrLibL1L1_T,2023-10-23,,Indoor,A,In,Out,-37.80760657,144.95862847,"-37.80760657, 144.95862847"
+146,narrm ngarrgu Library - Level 1 - Lift 3,narrLibL1L3_T,2023-10-23,,Indoor,A,,,-37.80766922,144.95840594,"-37.80766922, 144.95840594"
+150,narrm ngarrgu Library - Level 1 Main Stairs B,narrLibL1MB_T,2023-10-23,,Indoor,A,,,-37.80791198,144.95820087,"-37.80791198, 144.95820087"
+151,narrm ngarrgu Library - Level 2 - Collections Stairs A,narrLibL2CA_T,2023-10-23,,Indoor,A,In,Out,-37.80771581,144.9586238,"-37.80771581, 144.9586238"
+154,narrm ngarrgu Library - Level 3 Children's Library Door 1,narrLibL3C1_T,2023-10-23,,Indoor,A,In,Out,-37.80778437,144.95862772,"-37.80778437, 144.95862772"
+155,narrm ngarrgu Library - Level 3 Children's Library Door 2,narrLibL#C2_T,2023-10-23,,Indoor,A,,,-37.80783201,144.95845043,"-37.80783201, 144.95845043"
+160,"City Baths, 420 Swanston Street - Main Entry",Swa420_T,2024-06-04,,Indoor,A,,,-37.80699526,144.96306214,"-37.80699526, 144.96306214"
+161,Birrarung Marr - COM - Pole 1109,BirArt1109_T,2024-06-04,,Outdoor,A,East,West,-37.81851276,144.97131336,"-37.81851276, 144.97131336"
+165,475 Spencer Street,Spen475_T,2024-08-14,,Outdoor,A,North,South,-37.80953359,144.94939004,"-37.80953359, 144.94939004"
+181,368 Elizabeth Street,Eli368_T,2025-03-26,Moved from 380 Elizabeth Street,Outdoor,A,North,South,-37.81009465,144.96143149,"-37.81009465, 144.96143149"
+184,124 Elizabeth Street,Eli124_T,2025-06-28,,Outdoor,A,In,Out,-37.81512416,144.96371988,"-37.81512416, 144.96371988"
+184,124 Elizabeth Street,Eli124_T,2025-06-28,,Outdoor,A,North,InOut,-37.81512416,144.96371988,"-37.81512416, 144.96371988"
+185,197 Elizabeth Street,Eli197_T,2025-06-28,,Outdoor,A,North,InOut,-37.81374643,144.96276183,"-37.81374643, 144.96276183"
+188,RMIT Building 51 - 80-92 Victoria Street,RMIT51_T,2025-10-17,,Outdoor,A,North,South,-37.80663222,144.96456557,"-37.80663222, 144.96456557"
+1,Bourke Street Mall (North),Bou292_T,2009-03-24,,Outdoor,A,East,West,-37.81349441,144.96515323,"-37.81349441, 144.96515323"
+4,Town Hall (West),Swa123_T,2009-03-23,,Outdoor,A,North,South,-37.81487988,144.9660878,"-37.81487988, 144.9660878"
+10,Victoria Point,BouHbr_T,2009-04-23,,Outdoor,A,East,West,-37.81876474,144.94710545,"-37.81876474, 144.94710545"
+11,Waterfront City,WatCit_T,2009-01-20,,Outdoor,A,East,West,-37.81564989,144.93970694,"-37.81564989, 144.93970694"
+24,Spencer St-Collins St (North),Col620_T,2013-09-02,,Outdoor,A,East,West,-37.81887963,144.95449198,"-37.81887963, 144.95449198"
+31,Lygon St (West),Lyg161_T,2013-10-10,"Pushbox Upgrade, 25/07/2023",Outdoor,A,North,South,-37.80169681,144.96658911,"-37.80169681, 144.96658911"
+36,Queen St (West),Que85_T,2015-01-20,"Pushbox Upgrade, 03/08/2023",Outdoor,A,North,South,-37.81652527,144.96121062,"-37.81652527, 144.96121062"
+39,Alfred Place,AlfPl_T,2019-12-04,In 4/12/2019 sensor upgraded,Outdoor,A,North,South,-37.81379749,144.96995745,"-37.81379749, 144.96995745"
+45,Little Collins St-Swanston St (East),Swa148_T,2017-06-29,"Pushbox Upgrade, 03/08/2023",Outdoor,A,North,South,-37.81414075,144.96609379,"-37.81414075, 144.96609379"
+49,QVM-Therry St (South),Eli501_T,2017-11-29,"Pushbox Upgrade, 20/07/2023",Outdoor,A,East,West,-37.80730068,144.95956055,"-37.80730068, 144.95956055"
+58,Bourke St - Spencer St (North),Bou688_T,2018-09-27,,Outdoor,A,East,West,-37.81686075,144.95358075,"-37.81686075, 144.95358075"
+59,Building 80 RMIT,RMIT_T,2019-02-13,,Outdoor,A,North,South,-37.80825648,144.96304859,"-37.80825648, 144.96304859"
+61,RMIT Building 14,RMIT14_T,2019-06-28,,Outdoor,A,North,South,-37.80767455,144.96309114,"-37.80767455, 144.96309114"
+62,La Trobe St (North),Lat224_T,2019-09-25,,Outdoor,A,East,West,-37.80996494,144.96216521,"-37.80996494, 144.96216521"
+65,Swanston St - City Square,SwaCs_T,2020-03-12,,Outdoor,A,North,South,-37.81569416,144.9668064,"-37.81569416, 144.9668064"
+75,Spring St- Flinders st (West),SprFli_T,2020-12-18,,Outdoor,A,North,South,-37.81515276,144.97467661,"-37.81515276, 144.97467661"
+77,Harbour Esplanade (West) - Pedestrian path,HarEsP_T,2021-03-25,Replaced - water damaged,Outdoor,A,North,South,-37.81441438,144.94433026,"-37.81441438, 144.94433026"
+79,Flinders St (South),FliSS_T,2021-09-10,,Outdoor,A,East,West,-37.81794046,144.96616678,"-37.81794046, 144.96616678"
+80,Boyd Commuinty - Rear door,BoCoR_T,2021-03-30,,Indoor,A,,,-37.8254567,144.96131206,"-37.8254567, 144.96131206"
+83,510 Elizabeth Street,Eli510_T,2021-11-05,,Indoor,A,,,-37.8067319,144.96005113,"-37.8067319, 144.96005113"
+84,Elizabeth St - Flinders St (East) - New footpath,ElFi_T,2021-12-03,,Outdoor,A,North,South,-37.81798049,144.96503383,"-37.81798049, 144.96503383"
+87,Errol St (West),Errol23_T,2022-05-20,,Outdoor,A,North,South,-37.80454949,144.94921863,"-37.80454949, 144.94921863"
+91,Library at The Dock-North side,DocLib1_T,2015-06-05,,Indoor,A,,,-37.8200188,144.94029861,"-37.8200188, 144.94029861"
+94,Fitzroy Garden- The Conservatory,FitConVis_T,2015-03-02,,Indoor,A,,,-37.81424531,144.97851861,"-37.81424531, 144.97851861"
+95,Fitzroy Garden Visitor Centre External,FitGarExtVisExt_T,2015-03-02,"Pushbox Upgrade, 30/06/2023",Indoor,A,,,-37.81488315,144.97926569,"-37.81488315, 144.97926569"
+102,North Melbourne Library,NtMelLib_T,2018-02-02,,Indoor,A,,,-37.80340543,144.94977011,"-37.80340543, 144.94977011"
+103,Kensington Town Hall,KenTown_T,2018-02-02,Device Replace,Indoor,A,,,-37.7893527,144.9286055,"-37.7893527, 144.9286055"
+108,William St - Little Lonsdale St (West),261Will_T,2022-10-08,,Outdoor,A,North,South,-37.81295822,144.95678789,"-37.81295822, 144.95678789"
+109,La Trobe St- William St (South),LatWill_T,2022-10-08,,Outdoor,A,East,West,-37.81193681,144.95621105,"-37.81193681, 144.95621105"
+124,Birrarung Marr East - Batman Ave Bridge Entry,BirBridge_T,2023-06-02,,Outdoor,A,North,South,-37.81757416,144.97329934,"-37.81757416, 144.97329934"
+135,I-Hub Southern Cross Station - Bourke Street Entrance - South,Spen161_T,2023-09-25,,Outdoor,A,North,South,-37.8172861,144.95319102,"-37.8172861, 144.95319102"
+137,"COM Pole 2353 - Towards the city, NAB Building",BouHbr2353_T,2023-11-03,,Outdoor,A,East,West,-37.81894815,144.94612292,"-37.81894815, 144.94612292"
+138,"COM Pole 1671 - Enterprize Park, Queens Bridge",EntPark1671_T,2023-11-20,,Outdoor,A,East,West,-37.81996544,144.95981454,"-37.81996544, 144.95981454"
+141,Awning of Nationwide Parking 474 Flinders Street,474Fl_T,2023-11-10,,Outdoor,A,East,West,-37.81997273,144.95834911,"-37.81997273, 144.95834911"
+148,narrm ngarrgu Library - Level 1 - Meeting Room Lift 2,narrLibMRL2_T,2023-10-23,,Indoor,A,,,-37.80772224,144.95823515,"-37.80772224, 144.95823515"
+149,narrm ngarrgu Library - Level 1 Main Stairs A,narrLibL1MA_T,2023-10-23,,Indoor,A,,,-37.80781158,144.9582219,"-37.80781158, 144.9582219"
+153,narrm ngarrgu Library - Level 2 - Study Area Lifts 2,narrLibL2S2_T,2023-10-23,,Indoor,A,,,-37.80780367,144.95829765,"-37.80780367, 144.95829765"
+158,514 Elizebeth Street,Eli514_T,2024-01-29,,Indoor,A,,,-37.80657467,144.96007044,"-37.80657467, 144.96007044"
+164,I-Hub 526 La Trobe Street (Footpath),Lat526_T,2024-08-14,,Outdoor,A,East,West,-37.813005,144.95160411,"-37.813005, 144.95160411"
+180,"Pumping Station No.2, 330 Macaulay Road",Mac330_T,2025-03-11,,Outdoor,A,East,West,-37.79497059,144.93530329,"-37.79497059, 144.93530329"
+185,197 Elizabeth Street,Eli197_T,2025-06-28,,Outdoor,A,In,Out,-37.81374643,144.96276183,"-37.81374643, 144.96276183"
+185,197 Elizabeth Street,Eli197_T,2025-06-28,,Outdoor,A,North,South,-37.81374643,144.96276183,"-37.81374643, 144.96276183"

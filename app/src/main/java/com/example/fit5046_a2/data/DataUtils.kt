@@ -2,13 +2,14 @@ package com.example.fit5046_a2.data
 
 import android.content.Context
 import com.example.fit5046_a2.R
+import com.example.fit5046_a2.model.SensorLocation
 import com.google.android.gms.maps.model.LatLng
 
-fun readRecyclingData(context: Context): List<LatLng> {
+fun readRecyclingData(context: Context): List<SensorLocation> {
     val inputStream = context.resources.openRawResource(R.raw.recycling_bins)
     val reader = inputStream.bufferedReader()
 
-    val locations = mutableListOf<LatLng>()
+    val locations = mutableListOf<SensorLocation>()
 
     reader.readLine() // skip header
 
@@ -16,14 +17,26 @@ fun readRecyclingData(context: Context): List<LatLng> {
         val tokens = line.split(",")
 
         try {
-            val lat = tokens[4].toDouble()
-            val lng = tokens[5].toDouble()
+            val id = tokens[0].toInt()
+            val description = tokens[1]
+            val name = tokens[2]
+            val type = tokens[5]
+            val status = tokens[6]
+            val lat = tokens[9].toDouble()
+            val lng = tokens[10].toDouble()
+            val locationText = tokens[11]
 
-            // FAKE move to Melbourne
-            val melLat = -37.8136 + (Math.random() - 0.5) * 0.05
-            val melLng = 144.9631 + (Math.random() - 0.5) * 0.05
-
-            locations.add(LatLng(melLat, melLng))
+            locations.add(
+                SensorLocation(
+                    id = id,
+                    name = name,
+                    description = description,
+                    latLng = LatLng(lat, lng),
+                    type = type,
+                    status = status,
+                    locationText = locationText
+                )
+            )
 
         } catch (e: Exception) {
             e.printStackTrace()
