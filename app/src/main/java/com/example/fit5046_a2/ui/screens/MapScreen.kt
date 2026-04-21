@@ -32,6 +32,10 @@ import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.filled.Close
 
 import com.google.android.gms.maps.model.*
 
@@ -62,7 +66,7 @@ fun MapScreen(
 ) {
 
     var query by remember { mutableStateOf("") }
-    var userLocation by remember { mutableStateOf<LatLng?>(null) }
+    var showNearbyList by remember { mutableStateOf(false) }
     val melbourne = LatLng(-37.8136, 144.9631)
     val sheetState = rememberModalBottomSheetState()
     var selectedLocation by remember { mutableStateOf<SensorLocation?>(null) }
@@ -70,6 +74,9 @@ fun MapScreen(
         position = CameraPosition.fromLatLngZoom(melbourne, 14f)
     }
     val context = LocalContext.current
+    val greenColor = Color(0xFF4CAF50)
+    val mintColor = Color(0xFFDDF3E8)
+
 
     var hasLocationPermission by remember {
         mutableStateOf(
@@ -120,6 +127,12 @@ fun MapScreen(
             val locations = remember {
                 readRecyclingData(context)
             }
+            val currentLocation = LatLng(-37.8136, 144.9631)
+
+            val nearbyLocations = locations
+                .distinctBy { it.latLng }
+                .sortedBy { distanceBetween(currentLocation, it.latLng) }
+                .take(20)
             var isMoving by remember { mutableStateOf(true) }
             var showPopup by remember { mutableStateOf(false) }
 
@@ -263,13 +276,145 @@ fun MapScreen(
                 }
             }
 
+            if (showNearbyList) {
+                ModalBottomSheet(
+                    onDismissRequest = { showNearbyList = false },
+                    sheetState = sheetState,
+                    containerColor = mintColor
+                ) {
+
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp)
+                    ) {
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = "Nearby Centers (${nearbyLocations.size})",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+
+                            IconButton(
+                                onClick = { showNearbyList = false },
+                                modifier = Modifier
+                                    .size(36.dp)
+                                    .background(Color.LightGray.copy(alpha = 0.3f), CircleShape)
+                            ){
+                                Icon(
+                                    imageVector = Icons.Default.Close,
+                                    contentDescription = "Close",
+                                    tint = Color.Gray
+                                )
+                            }
+                        }
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        LazyColumn(
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            items(nearbyLocations) { location ->
+
+                                Card(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(vertical = 8.dp),
+                                    shape = RoundedCornerShape(16.dp),
+                                    colors = CardDefaults.cardColors(containerColor = Color.White),
+                                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                                ) {
+                                    Row(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(12.dp),
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+
+                                        Box(
+                                            modifier = Modifier
+                                                .size(70.dp)
+                                                .background(Color.LightGray, RoundedCornerShape(12.dp))
+                                        )
+
+                                        Spacer(modifier = Modifier.width(12.dp))
+
+                                        Column(modifier = Modifier.weight(1f)) {
+
+                                            Text(
+                                                location.description,
+                                                fontWeight = FontWeight.Bold,
+                                                fontSize = 16.sp
+                                            )
+
+                                            val distance = distanceBetween(
+                                                currentLocation,
+                                                location.latLng
+                                            ) / 1000
+
+                                            Text(
+                                                text = "${"%.1f".format(distance)} km away",
+                                                fontSize = 13.sp,
+                                                color = Color.Gray
+                                            )
+
+                                            Text(
+                                                text = location.type,
+                                                fontSize = 12.sp,
+                                                color = Color.DarkGray
+                                            )
+                                        }
+
+                                        IconButton(
+                                            onClick = {
+                                                showNearbyList = false
+                                                selectedLocation = location
+                                                cameraPositionState.position =
+                                                    CameraPosition.fromLatLngZoom(location.latLng, 16f)
+                                            }
+                                        ) {
+                                            Text("➡️")
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             Button(
                 onClick = { isMoving = !isMoving },
+                colors = ButtonDefaults.buttonColors(containerColor = greenColor),
+                shape = RoundedCornerShape(24.dp),
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
                     .padding(16.dp)
             ) {
-                Text(if (isMoving) "Stop Moving" else "Start Moving")
+                Text(if (isMoving) "Stop Moving" else "Start Moving", color = Color.White)
+            }
+
+            FloatingActionButton(
+                onClick = { showNearbyList = true },
+                containerColor = mintColor,
+                contentColor = greenColor,
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(start = 6.dp, bottom = 5.dp)
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(horizontal = 8.dp)
+                ) {
+                    Icon(Icons.Default.Search, contentDescription = null)
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text("Nearby")
+                }
             }
 
             // Search Bar (Top Overlay)
@@ -301,7 +446,7 @@ fun MapScreen(
                             Icon(
                                 imageVector = Icons.Default.Search,
                                 contentDescription = null,
-                                tint = Color.Gray
+                                tint = greenColor
                             )
                         }
                     )
