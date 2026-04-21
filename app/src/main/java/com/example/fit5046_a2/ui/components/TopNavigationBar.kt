@@ -53,7 +53,7 @@ fun TopNavigationBar(
                 verticalAlignment = Alignment.CenterVertically) {
 
                 NavItem( // change
-                    imageRes = R.drawable.guide,
+                    imageRes = R.drawable.help2,
                     label = "guide",
                     selected = selectedItem == "guide",
                     selectedColor = selectedColor,

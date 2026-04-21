@@ -54,8 +54,7 @@ fun HomeScreen(
         topBar = {
             TopNavigationBar(
                 selectedItem = "",
-                onProfileClick = onProfileClick,
-                onGuideClick = onGuideClick
+                onProfileClick = onProfileClick
             )
         },
         bottomBar = {

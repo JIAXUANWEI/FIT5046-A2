@@ -45,7 +45,7 @@ fun MainApp() {
                 Log.d("Navigation", "Navigating to profile. Current screen: $currentScreen")
             },
             onGuideClick = { 
-                currentScreen = "map"
+                currentScreen = "guide"
                 Log.d("Navigation", "Navigating to map (guide). Current screen: $currentScreen")
             },
             onHistoryClick = {
