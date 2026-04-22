@@ -37,8 +37,6 @@ fun WasteHistoryScreen(
     onBackClick: () -> Unit = {},
     onAddItemClick: () -> Unit = {},
     onItemClick: (WasteItem) -> Unit = {},
-    onDeleteClick: (WasteItem) -> Unit = {},
-    onEditClick: (WasteItem) -> Unit = {},
     onMapClick: () -> Unit = {},
     onAchieveClick: () -> Unit
 ) {

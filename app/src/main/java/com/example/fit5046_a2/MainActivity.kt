@@ -129,15 +129,6 @@ fun MainApp() {
                 currentScreen = "details"
                 Log.d("Navigation", "Viewing details for ${selectedItem?.name}. Current screen: $currentScreen")
             },
-            onDeleteClick = { item ->
-                wasteItems.remove(item)
-                Log.d("Navigation", "Item deleted: ${item.name}")
-            },
-            onEditClick = { item ->
-                selectedItem = item
-                currentScreen = "edit"
-                Log.d("Navigation", "Editing item: ${selectedItem?.name}. Current screen: $currentScreen")
-            },
             onMapClick = {
                 currentScreen = "map"
                 Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
