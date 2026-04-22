@@ -15,18 +15,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+val mintColor = Color(0xFFDDF3E8)
 
 @Composable
 fun RecycleStatBox(
     title: String,
-    value: String,
-    greenColor: Color,
+    value: Int,
+    boxColor: Color,
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(18.dp))
-            .background(Color.White)
+            .background(mintColor)
             .padding(vertical = 16.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -42,9 +43,9 @@ fun RecycleStatBox(
             Spacer(modifier = Modifier.height(6.dp))
 
             Text(
-                text = value,
+                text = value.toString(),
                 style = MaterialTheme.typography.titleLarge,
-                color = greenColor
+                color = boxColor
             )
         }
     }

@@ -27,8 +27,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.fit5046_a2.R
 import com.example.fit5046_a2.ui.components.BottomNavigationBar
 import com.example.fit5046_a2.ui.components.RecycleStatBox
@@ -38,23 +40,25 @@ import com.example.fit5046_a2.ui.theme.FIT5046A2Theme
 
 @Composable
 fun HomeScreen(
-    onProfileClick: () -> Unit,
-    onGuideClick: () -> Unit,
-    onHistoryClick: () -> Unit,
-    onMapClick: () -> Unit,
-    onLoginClick: () -> Unit,
-    onAchieveClick: () -> Unit
-
+    onProfileClick: () -> Unit = {},
+    onGuideClick: () -> Unit = {},
+    onHistoryClick: () -> Unit = {},
+    onMapClick: () -> Unit = {},
+    onLoginClick: () -> Unit = {},
+    onAchieveClick: () -> Unit = {}
 ) {
     val backgroundColor = Color(0xFFF6F7F7)
     val mintColor = Color(0xFFDDF3E8)
     val greenColor = Color(0xFF34C759)
+    val darkText = Color(0xFF2F2F2F)
+    val cardWhite = Color.White
 
     Scaffold(
         topBar = {
             TopNavigationBar(
                 selectedItem = "",
-                onProfileClick = onProfileClick
+                onProfileClick = onProfileClick,
+                onGuideClick = onGuideClick
             )
         },
         bottomBar = {
@@ -68,7 +72,7 @@ fun HomeScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = onLoginClick,
-                containerColor = Color(0xFF34C759)
+                containerColor = greenColor
             ) {
                 Text(
                     text = "Test",
@@ -76,7 +80,6 @@ fun HomeScreen(
                 )
             }
         },
-
         containerColor = backgroundColor
     ) { innerPadding ->
         Column(
@@ -84,183 +87,242 @@ fun HomeScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 20.dp, vertical = 10.dp)
+                .padding(bottom = 16.dp)
         ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "Welcome Back!",
-                    style = MaterialTheme.typography.headlineSmall,
-                    color = Color(0xFF1F1F1F)
-                )
-            }
-
             Card(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp),
-                shape = RoundedCornerShape(24.dp),
-                colors = CardDefaults.cardColors(containerColor = mintColor)
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(
+                    bottomStart = 28.dp,
+                    bottomEnd = 28.dp
+                ),
+                colors = CardDefaults.cardColors(containerColor = greenColor)
             ) {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 20.dp)
+                        .padding(horizontal = 18.dp, vertical = 20.dp)
                 ) {
                     Text(
-                        text = "You have recycled:",
-                        style = MaterialTheme.typography.titleMedium,
-                        color = Color(0xFF1F1F1F),
-                        modifier = Modifier.padding(horizontal = 20.dp)
+                        text = "Welcome Back!",
+                        color = Color.White,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.padding(top = 20.dp)
                     )
 
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 20.dp, vertical = 20.dp),
-                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(24.dp),
+                        colors = CardDefaults.cardColors(containerColor = cardWhite)
                     ) {
-                        RecycleStatBox(
-                            title = "Bottles",
-                            value = "32",
-                            greenColor = greenColor,
-                            modifier = Modifier.weight(1f)
-                        )
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(20.dp)
+                        ) {
+                            Text(
+                                text = "You have recycled:",
+                                color = darkText,
+                                fontSize = 18.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
 
-                        RecycleStatBox(
-                            title = "Paper",
-                            value = "32",
-                            greenColor = greenColor,
-                            modifier = Modifier.weight(1f)
-                        )
+                            Spacer(modifier = Modifier.height(16.dp))
 
-                        RecycleStatBox(
-                            title = "Glass",
-                            value = "32",
-                            greenColor = greenColor,
-                            modifier = Modifier.weight(1f)
-                        )
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(12.dp)
+                            ) {
+                                RecycleStatBox(
+                                    title = "Bottles",
+                                    value = 32,
+                                    boxColor = darkText,
+                                    modifier = Modifier.weight(1f)
+                                )
+
+                                RecycleStatBox(
+                                    title = "Paper",
+                                    value = 11,
+                                    boxColor = darkText,
+                                    modifier = Modifier.weight(1f)
+                                )
+
+                                RecycleStatBox(
+                                    title = "Glass",
+                                    value = 88,
+                                    boxColor = darkText,
+                                    modifier = Modifier.weight(1f)
+                                )
+                            }
+                        }
                     }
                 }
             }
 
-            Box(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 18.dp, vertical = 18.dp)
             ) {
-                Text("Items to Return?",
-                    style = MaterialTheme.typography.bodyMedium
+                Text(
+                    text = "Items to Return?",
+                    color = darkText,
+                    fontSize = 19.sp,
+                    fontWeight = FontWeight.SemiBold
                 )
-            }
 
-            SettingsItem(
-                imageRes = R.drawable.camera,
-                title = "Scan Item",
-                subtitle = "Find the closest refund point"
-            )
+                Spacer(modifier = Modifier.height(12.dp))
 
-            Box(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
-            ) {
-                Text("Tips",
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(20.dp),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFFDDF3E8))
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp)
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(22.dp),
+                    colors = CardDefaults.cardColors(containerColor = cardWhite)
                 ) {
-
-                    Spacer(modifier = Modifier.height(10.dp))
-
-                    // Tip 1
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.padding(vertical = 4.dp)
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.Center
                     ) {
-                        Box(
-                            modifier = Modifier
-                                .size(8.dp)
-                                .clip(CircleShape)
-                                .background(Color(0xFF34C759))
-                        )
-
-                        Spacer(modifier = Modifier.width(10.dp))
-
-                        Text(
-                            text = "Rinse bottles before recycling",
-                            style = MaterialTheme.typography.bodyMedium
+                        SettingsItem(
+                            imageRes = R.drawable.camera,
+                            title = "Scan Item",
+                            subtitle = "Find the closest refund point"
                         )
                     }
+                }
 
-                    // Tip 2
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.padding(vertical = 4.dp)
+                Spacer(modifier = Modifier.height(22.dp))
+
+                Text(
+                    text = "Tips",
+                    color = darkText,
+                    fontSize = 19.sp,
+                    fontWeight = FontWeight.SemiBold
+                )
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(24.dp),
+                    colors = CardDefaults.cardColors(containerColor = mintColor)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(18.dp),
+                        verticalArrangement = Arrangement.spacedBy(14.dp)
                     ) {
-                        Box(
-                            modifier = Modifier
-                                .size(8.dp)
-                                .clip(CircleShape)
-                                .background(Color(0xFF34C759))
-                        )
-
-                        Spacer(modifier = Modifier.width(10.dp))
-
-                        Text(
-                            text = "Keep paper and cardboard dry",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
+                        TipRow("Rinse bottles before recycling", greenColor, darkText)
+                        TipRow("Keep paper and cardboard dry", greenColor, darkText)
+                        TipRow("Separate glass from general waste", greenColor, darkText)
+                        TipRow("Do not mix food waste with recyclables", greenColor, darkText)
                     }
+                }
 
-                    // Tip 3
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.padding(vertical = 4.dp)
+                Spacer(modifier = Modifier.height(22.dp))
+
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(28.dp),
+                    colors = CardDefaults.cardColors(containerColor = greenColor)
+                ) {
+                    Box(
+                        modifier = Modifier.fillMaxWidth()
                     ) {
                         Box(
                             modifier = Modifier
-                                .size(8.dp)
+                                .size(110.dp)
+                                .padding(start = 0.dp, top = 0.dp)
                                 .clip(CircleShape)
-                                .background(Color(0xFF34C759))
+                                .background(Color.White.copy(alpha = 0.12f))
                         )
 
-                        Spacer(modifier = Modifier.width(10.dp))
-
-                        Text(
-                            text = "Separate glass from general waste",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
-                    }
-
-                    // Tip 4
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.padding(vertical = 4.dp)
-                    ) {
-                        Box(
+                        Column(
                             modifier = Modifier
-                                .size(8.dp)
-                                .clip(CircleShape)
-                                .background(Color(0xFF34C759))
-                        )
+                                .fillMaxWidth()
+                                .padding(horizontal = 20.dp, vertical = 22.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = "Today's Goal",
+                                color = Color.White,
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
 
-                        Spacer(modifier = Modifier.width(10.dp))
+                            Spacer(modifier = Modifier.height(18.dp))
 
-                        Text(
-                            text = "Do not mix food waste with recyclables",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
+                            Box(
+                                modifier = Modifier
+                                    .size(82.dp)
+                                    .clip(CircleShape)
+                                    .background(Color.White.copy(alpha = 0.9f)),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = "3",
+                                    color = greenColor,
+                                    fontSize = 30.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+
+                            Spacer(modifier = Modifier.height(16.dp))
+
+                            Text(
+                                text = "Recycle 3 items today",
+                                color = Color.White,
+                                fontSize = 22.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+
+                            Spacer(modifier = Modifier.height(8.dp))
+
+                            Text(
+                                text = "Stay consistent and build your recycling streak.",
+                                color = Color.White.copy(alpha = 0.92f),
+                                fontSize = 14.sp
+                            )
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+@Composable
+fun TipRow(
+    text: String,
+    dotColor: Color,
+    textColor: Color
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(
+            modifier = Modifier
+                .size(9.dp)
+                .clip(CircleShape)
+                .background(dotColor)
+        )
+
+        Spacer(modifier = Modifier.width(10.dp))
+
+        Text(
+            text = text,
+            color = textColor,
+            style = MaterialTheme.typography.bodyMedium
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreview() {
+    FIT5046A2Theme {
+        HomeScreen()
     }
 }
