@@ -2,15 +2,20 @@ package com.example.fit5046_a2.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.CalendarToday
+import androidx.compose.material.icons.filled.Eco
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -37,9 +42,13 @@ fun WasteHistoryScreen(
     onMapClick: () -> Unit = {},
     onAchieveClick: () -> Unit
 ) {
-    val backgroundColor = Color(0xFFF6F7F7)
-    val greenColor = Color(0xFF4CAF50)
+    val backgroundColor = Color(0xFFFAF9F6)
+    val primaryGreen = Color(0xFF2EBD59)
     
+    var searchQuery by remember { mutableStateOf("") }
+    var selectedCategory by remember { mutableStateOf("All Time") }
+    val categories = listOf("All Time", "Plastic", "Paper", "Glass", "Metal")
+
     Scaffold(
         bottomBar = {
             BottomNavigationBar(
@@ -50,83 +59,152 @@ fun WasteHistoryScreen(
                 onAchieveClick = onAchieveClick
             )
         },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = onAddItemClick,
+                containerColor = primaryGreen,
+                contentColor = Color.White,
+                shape = CircleShape,
+                modifier = Modifier.size(64.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = "Add Item",
+                    modifier = Modifier.size(32.dp)
+                )
+            }
+        },
         containerColor = backgroundColor
     ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(horizontal = 20.dp)
         ) {
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(20.dp))
             
             // Top Bar
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(
+                Surface(
                     onClick = onBackClick,
-                    modifier = Modifier
-                        .size(36.dp)
-                        .background(greenColor.copy(alpha = 0.1f), CircleShape)
+                    shape = CircleShape,
+                    color = Color.White,
+                    shadowElevation = 2.dp,
+                    modifier = Modifier.size(48.dp)
                 ) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = "Back",
-                        tint = greenColor,
-                        modifier = Modifier.size(20.dp)
-                    )
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "Back",
+                            modifier = Modifier.size(24.dp)
+                        )
+                    }
                 }
                 
                 Text(
-                    text = "Waste Items",
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold
+                    text = "History",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = Color(0xFF2D2D2D)
                 )
                 
-                Spacer(modifier = Modifier.width(36.dp)) // To balance the back button
+                Surface(
+                    onClick = { /* Calendar click */ },
+                    shape = CircleShape,
+                    color = Color.White,
+                    shadowElevation = 2.dp,
+                    modifier = Modifier.size(48.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = Icons.Default.CalendarToday,
+                            contentDescription = "Calendar",
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
             }
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Search and Add Button
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
+            // Search Bar
+            Surface(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+                    .height(60.dp),
+                shape = RoundedCornerShape(30.dp),
+                color = Color.White,
+                shadowElevation = 1.dp
             ) {
-                var searchQuery by remember { mutableStateOf("") }
-                
-                OutlinedTextField(
-                    value = searchQuery,
-                    onValueChange = { searchQuery = it },
-                    placeholder = { Text("Search", color = Color.Gray) },
-                    leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, tint = greenColor) },
+                Row(
                     modifier = Modifier
-                        .weight(1f)
-                        .height(56.dp),
-                    shape = RoundedCornerShape(28.dp),
-                    colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.LightGray,
-                        focusedBorderColor = greenColor,
-                        focusedContainerColor = Color.White,
-                        unfocusedContainerColor = Color.White
-                    )
-                )
-
-                Spacer(modifier = Modifier.width(12.dp))
-
-                Button(
-                    onClick = onAddItemClick,
-                    modifier = Modifier.height(48.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = greenColor),
-                    shape = RoundedCornerShape(24.dp),
-                    contentPadding = PaddingValues(horizontal = 16.dp)
+                        .fillMaxSize()
+                        .padding(horizontal = 20.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(18.dp))
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Add Item", fontSize = 14.sp)
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = null,
+                        tint = Color.Gray.copy(alpha = 0.6f),
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Spacer(modifier = Modifier.width(12.dp))
+                    BasicTextField(
+                        value = searchQuery,
+                        onValueChange = { searchQuery = it },
+                        modifier = Modifier.weight(1f),
+                        textStyle = MaterialTheme.typography.bodyLarge.copy(color = Color.DarkGray),
+                        decorationBox = { innerTextField ->
+                            if (searchQuery.isEmpty()) {
+                                Text(
+                                    "Search history...", 
+                                    color = Color.Gray.copy(alpha = 0.6f), 
+                                    style = MaterialTheme.typography.bodyLarge
+                                )
+                            }
+                            innerTextField()
+                        }
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Categories
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState())
+                    .padding(horizontal = 20.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                categories.forEach { category ->
+                    val isSelected = category == selectedCategory
+                    Surface(
+                        onClick = { selectedCategory = category },
+                        shape = RoundedCornerShape(25.dp),
+                        color = if (isSelected) primaryGreen else Color.White,
+                        modifier = Modifier.height(50.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier.padding(horizontal = 24.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = category,
+                                color = if (isSelected) Color.White else Color.Gray,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 16.sp
+                            )
+                        }
+                    }
                 }
             }
 
@@ -134,67 +212,143 @@ fun WasteHistoryScreen(
 
             // List
             LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 20.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
-                contentPadding = PaddingValues(bottom = 20.dp),
-                modifier = Modifier.fillMaxSize()
+                contentPadding = PaddingValues(bottom = 24.dp)
             ) {
-                items(wasteItems) { item ->
-                    WasteItemCard(
-                        item = item, 
-                        onClick = { onItemClick(item) },
-                        onDeleteClick = { onDeleteClick(item) },
-                        onEditClick = { onEditClick(item) }
-                    )
+                val filteredItems = if (selectedCategory == "All Time") {
+                    wasteItems
+                } else {
+                    wasteItems.filter { it.category.contains(selectedCategory, ignoreCase = true) }
+                }
+
+                if (filteredItems.isNotEmpty()) {
+                    val todayItems = filteredItems.filter { it.dateAdded.contains("Today", ignoreCase = true) }
+                    val yesterdayItems = filteredItems.filter { it.dateAdded.contains("Yesterday", ignoreCase = true) }
+                    val otherItems = filteredItems.filter { !it.dateAdded.contains("Today", ignoreCase = true) && !it.dateAdded.contains("Yesterday", ignoreCase = true) }
+
+                    if (todayItems.isNotEmpty()) {
+                        item { SectionHeader("TODAY") }
+                        items(todayItems) { item ->
+                            WasteItemCard(
+                                item = item, 
+                                onClick = { onItemClick(item) }
+                            )
+                        }
+                    }
+
+                    if (yesterdayItems.isNotEmpty()) {
+                        item { SectionHeader("YESTERDAY") }
+                        items(yesterdayItems) { item ->
+                            WasteItemCard(
+                                item = item, 
+                                onClick = { onItemClick(item) }
+                            )
+                        }
+                    }
+
+                    if (otherItems.isNotEmpty()) {
+                        item { SectionHeader("PAST") }
+                        items(otherItems) { item ->
+                            WasteItemCard(
+                                item = item,
+                                onClick = { onItemClick(item) }
+                            )
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SectionHeader(title: String) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        HorizontalDivider(
+            modifier = Modifier.weight(1f),
+            thickness = 1.dp,
+            color = Color.LightGray.copy(alpha = 0.5f)
+        )
+        Text(
+            text = title,
+            modifier = Modifier.padding(horizontal = 16.dp),
+            style = MaterialTheme.typography.labelLarge,
+            color = Color.Gray,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.sp
+        )
+        HorizontalDivider(
+            modifier = Modifier.weight(1f),
+            thickness = 1.dp,
+            color = Color.LightGray.copy(alpha = 0.5f)
+        )
+    }
+}
+
 @Composable
 fun WasteItemCard(
     item: WasteItem, 
-    onClick: () -> Unit,
-    onDeleteClick: () -> Unit,
-    onEditClick: () -> Unit
+    onClick: () -> Unit
 ) {
-    var menuExpanded by remember { mutableStateOf(false) }
-    
-    // Determine the image based on item name using the new drawables
     val imageResId = when {
-        item.name.contains("Plastic Bottle", ignoreCase = true) -> R.drawable.plastic_bottle
-        item.name.contains("Glass Bottle", ignoreCase = true) -> R.drawable.glass_bottle
+        item.name.contains("Plastic", ignoreCase = true) -> R.drawable.plastic_bottle
+        item.name.contains("Glass", ignoreCase = true) -> R.drawable.glass_bottle
+        item.name.contains("Box", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> R.drawable.book_paper
         item.name.contains("Phone", ignoreCase = true) || item.name.contains("Mobile", ignoreCase = true) -> R.drawable.phone
-        item.name.contains("Soda Can", ignoreCase = true) -> R.drawable.soda_can
-        item.name.contains("Book", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> R.drawable.book_paper
+        item.name.contains("Can", ignoreCase = true) || item.name.contains("Soda", ignoreCase = true) -> R.drawable.soda_can
         else -> R.drawable.leaf
+    }
+    
+    val categoryColor = when {
+        item.name.contains("Plastic", ignoreCase = true) -> Color(0xFFE8F4FF)
+        item.name.contains("Glass", ignoreCase = true) -> Color(0xFFE8F5E9)
+        item.name.contains("Box", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> Color(0xFFFFF4E5)
+        item.name.contains("Phone", ignoreCase = true) || item.name.contains("Mobile", ignoreCase = true) -> Color(0xFFF3E5F5)
+        item.name.contains("Can", ignoreCase = true) || item.name.contains("Soda", ignoreCase = true) -> Color(0xFFFFEBEE)
+        else -> Color(0xFFF5F5F5)
+    }
+
+    val points = when {
+        item.name.contains("Plastic", ignoreCase = true) -> 15
+        item.name.contains("Glass", ignoreCase = true) -> 20
+        item.name.contains("Box", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> 25
+        item.name.contains("Phone", ignoreCase = true) || item.name.contains("Mobile", ignoreCase = true) -> 50
+        item.name.contains("Can", ignoreCase = true) || item.name.contains("Soda", ignoreCase = true) -> 10
+        else -> 10
     }
 
     Card(
         modifier = Modifier
-            .fillMaxWidth(),
-        shape = RoundedCornerShape(16.dp),
+            .fillMaxWidth()
+            .clickable(onClick = onClick),
+        shape = RoundedCornerShape(24.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        onClick = onClick
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
         Row(
             modifier = Modifier
-                .padding(12.dp)
+                .padding(16.dp)
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
                 modifier = Modifier
                     .size(64.dp)
-                    .background(Color(0xFFF0F0F0), RoundedCornerShape(12.dp)),
+                    .background(categoryColor, CircleShape),
                 contentAlignment = Alignment.Center
             ) {
                 Image(
                     painter = painterResource(id = imageResId),
                     contentDescription = null,
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier.size(32.dp)
                 )
             }
 
@@ -204,43 +358,37 @@ fun WasteItemCard(
                 Text(
                     text = item.name,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp
+                    fontSize = 18.sp,
+                    color = Color(0xFF2D2D2D)
                 )
                 Text(
-                    text = item.category,
-                    color = Color.Gray,
-                    fontSize = 12.sp
-                )
-                Text(
-                    text = item.status,
-                    color = Color(0xFF4CAF50),
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium
+                    text = "10:42 AM • Recycled at Home",
+                    color = Color.Gray.copy(alpha = 0.8f),
+                    fontSize = 14.sp
                 )
             }
 
-            Box {
-                IconButton(onClick = { menuExpanded = true }) {
-                    Icon(Icons.Default.MoreVert, contentDescription = "More", tint = Color.Gray)
-                }
-                
-                DropdownMenu(
-                    expanded = menuExpanded,
-                    onDismissRequest = { menuExpanded = false }
+            Surface(
+                shape = RoundedCornerShape(20.dp),
+                color = Color(0xFFE8F5E9),
+                modifier = Modifier.height(36.dp)
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
-                    DropdownMenuItem(
-                        text = { Text("Edit") },
-                        onClick = {
-                            menuExpanded = false
-                            onEditClick()
-                        }
+                    Text(
+                        text = "+$points",
+                        color = Color(0xFF2EBD59),
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
                     )
-                    DropdownMenuItem(
-                        text = { Text("Delete", color = Color.Red) },
-                        onClick = {
-                            menuExpanded = false
-                            onDeleteClick()
-                        }
+                    Icon(
+                        imageVector = Icons.Default.Eco,
+                        contentDescription = null,
+                        tint = Color(0xFF2EBD59),
+                        modifier = Modifier.size(18.dp)
                     )
                 }
             }

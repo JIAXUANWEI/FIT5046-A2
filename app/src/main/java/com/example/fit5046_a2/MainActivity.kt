@@ -30,11 +30,11 @@ fun MainApp() {
     // Initialize the list of waste items with some default data
     val wasteItems = remember {
         mutableStateListOf(
-            WasteItem(1, "Plastic Bottle", "Plastic", "PET (polyethylene Terephthalate)", "Commonly used for single-use bottles.", "Remove cap and label", "Recyclable"),
-            WasteItem(2, "Glass Bottle", "Glass", "Glass", "Commonly used for drinks.", "Rinse thoroughly", "Recyclable"),
-            WasteItem(3, "Mobile Phone", "Electronics", "Mixed", "Old electronic devices.", "Take to e-waste center", "Recyclable"),
-            WasteItem(4, "Aluminum Soda Can", "Aluminum", "Aluminum", "Drink cans.", "Rinse and crush", "Recyclable"),
-            WasteItem(5, "Book Paper", "Paper", "Paper", "Old books or magazines.", "Keep dry", "Recyclable")
+            WasteItem(1, "Plastic Bottle", "Plastic", "PET (polyethylene Terephthalate)", "Commonly used for single-use bottles.", "Remove cap and label", "Recyclable", "Today"),
+            WasteItem(2, "Glass Bottle", "Glass", "Glass", "Commonly used for drinks.", "Rinse thoroughly", "Recyclable", "Today"),
+            WasteItem(3, "Mobile Phone", "Electronics", "Mixed", "Old electronic devices.", "Take to e-waste center", "Recyclable", "Yesterday"),
+            WasteItem(4, "Aluminum Soda Can", "Aluminum", "Aluminum", "Drink cans.", "Rinse and crush", "Recyclable", "Yesterday"),
+            WasteItem(5, "Book Paper", "Paper", "Paper", "Old books or magazines.", "Keep dry", "Recyclable", "Yesterday")
         )
     }
 

@@ -34,18 +34,18 @@ fun WasteItemDetailsScreen(
     onBackClick: () -> Unit = {},
     onDeleteClick: () -> Unit = {}
 ) {
-    val greenColor = Color(0xFF4CAF50)
+    val greenColor = Color(0xFF2EBD59)
     val cardinalColor = Color(0xFFC41E3A)
     val lightCardinal = Color(0xFFE52B50)
     val lightGray = Color(0xFFF5F5F5)
 
     // Determine the image based on item name using the new drawables
     val imageResId = when {
-        item.name.contains("Plastic Bottle", ignoreCase = true) -> R.drawable.plastic_bottle
-        item.name.contains("Glass Bottle", ignoreCase = true) -> R.drawable.glass_bottle
+        item.name.contains("Plastic", ignoreCase = true) -> R.drawable.plastic_bottle
+        item.name.contains("Glass", ignoreCase = true) -> R.drawable.glass_bottle
         item.name.contains("Phone", ignoreCase = true) || item.name.contains("Mobile", ignoreCase = true) -> R.drawable.phone
-        item.name.contains("Soda Can", ignoreCase = true) -> R.drawable.soda_can
-        item.name.contains("Book", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> R.drawable.book_paper
+        item.name.contains("Can", ignoreCase = true) || item.name.contains("Soda", ignoreCase = true) -> R.drawable.soda_can
+        item.name.contains("Box", ignoreCase = true) || item.name.contains("Paper", ignoreCase = true) -> R.drawable.book_paper
         else -> R.drawable.leaf
     }
 
