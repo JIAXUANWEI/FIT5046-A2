@@ -53,17 +53,17 @@ fun AddWasteItemScreen(
         }
     }
 
-    var showNewCategoryDialog by remember { mutableStateOf(false) }
-    var newCategoryName by remember { mutableStateOf("") }
+    val showNewCategoryDialog = remember { mutableStateOf(false) }
+    val newCategoryName = remember { mutableStateOf("") }
 
-    if (showNewCategoryDialog) {
+    if (showNewCategoryDialog.value) {
         AlertDialog(
-            onDismissRequest = { showNewCategoryDialog = false },
+            onDismissRequest = { showNewCategoryDialog.value = false },
             title = { Text("Add New Category") },
             text = {
                 OutlinedTextField(
-                    value = newCategoryName,
-                    onValueChange = { newCategoryName = it },
+                    value = newCategoryName.value,
+                    onValueChange = { newCategoryName.value = it },
                     label = { Text("Category Name") },
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
@@ -72,13 +72,13 @@ fun AddWasteItemScreen(
             confirmButton = {
                 TextButton(
                     onClick = {
-                        if (newCategoryName.isNotBlank()) {
-                            if (!categoryList.contains(newCategoryName)) {
-                                categoryList.add(newCategoryName)
+                        if (newCategoryName.value.isNotBlank()) {
+                            if (!categoryList.contains(newCategoryName.value)) {
+                                categoryList.add(newCategoryName.value)
                             }
-                            category = newCategoryName
-                            newCategoryName = ""
-                            showNewCategoryDialog = false
+                            category = newCategoryName.value
+                            newCategoryName.value = ""
+                            showNewCategoryDialog.value = false
                         }
                     }
                 ) {
@@ -86,7 +86,7 @@ fun AddWasteItemScreen(
                 }
             },
             dismissButton = {
-                TextButton(onClick = { showNewCategoryDialog = false }) {
+                TextButton(onClick = { showNewCategoryDialog.value = false }) {
                     Text("Cancel")
                 }
             }
@@ -176,7 +176,7 @@ fun AddWasteItemScreen(
                 selectedCategory = category,
                 categories = categoryList,
                 onCategorySelected = { category = it },
-                onAddNewCategory = { showNewCategoryDialog = true }
+                onAddNewCategory = { showNewCategoryDialog.value = true }
             )
 
             InputField(label = "Material Type", value = materialType, onValueChange = { materialType = it }, placeholder = "PET (polyethylene Terephthalate)")
