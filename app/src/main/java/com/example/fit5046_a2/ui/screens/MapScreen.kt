@@ -22,7 +22,6 @@ import com.example.fit5046_a2.data.readRecyclingData
 import android.location.Location
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
-import java.util.*
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.font.FontWeight
@@ -36,7 +35,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.Close
-
+import kotlinx.coroutines.*
 import com.google.android.gms.maps.model.*
 
 fun distanceBetween(a: LatLng, b: LatLng): Float {
@@ -47,11 +46,6 @@ fun distanceBetween(a: LatLng, b: LatLng): Float {
         result
     )
     return result[0]
-}
-
-fun isNightTime(): Boolean {
-    val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
-    return hour < 6 || hour > 18
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -67,12 +61,14 @@ fun MapScreen(
 
     var query by remember { mutableStateOf("") }
     var showNearbyList by remember { mutableStateOf(false) }
+    var selectedLocation by remember { mutableStateOf<SensorLocation?>(null) }
     val melbourne = LatLng(-37.8136, 144.9631)
     val sheetState = rememberModalBottomSheetState()
-    var selectedLocation by remember { mutableStateOf<SensorLocation?>(null) }
     val cameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(melbourne, 14f)
     }
+    val sensor = remember { FakeSensorManager() }
+    var sensorEnabled by remember { mutableStateOf(true) }
     val context = LocalContext.current
     val greenColor = Color(0xFF4CAF50)
     val mintColor = Color(0xFFDDF3E8)
@@ -92,6 +88,9 @@ fun MapScreen(
     ) { granted ->
         hasLocationPermission = granted
     }
+
+    var isMoving by remember { mutableStateOf(true) }
+
 
     LaunchedEffect(Unit) {
         if (!hasLocationPermission) {
@@ -133,12 +132,25 @@ fun MapScreen(
                 .distinctBy { it.latLng }
                 .sortedBy { distanceBetween(currentLocation, it.latLng) }
                 .take(20)
-            var isMoving by remember { mutableStateOf(true) }
+
+            LaunchedEffect(sensorEnabled) {
+                if (sensorEnabled) {
+                    sensor.start { moving -> isMoving = moving }
+                } else {
+                    sensor.stop()
+                    isMoving = false // force default (idle mode)
+                }
+            }
             var showPopup by remember { mutableStateOf(false) }
 
-            LaunchedEffect(isMoving) {
+            LaunchedEffect(isMoving, sensorEnabled) {
+                if (!sensorEnabled) {
+                    showPopup = false
+                    return@LaunchedEffect
+                }
+
                 if (!isMoving) {
-                    kotlinx.coroutines.delay(5000)
+                    delay(5000)
                     showPopup = true
                 } else {
                     showPopup = false
@@ -171,21 +183,28 @@ fun MapScreen(
                                 it.name.contains(query, ignoreCase = true)
                     }
                     .let { filtered ->
-                        if (isMoving) {
-                            filtered
+                        when {
+                            !sensorEnabled -> filtered.take(50)
+                            isMoving -> filtered
                                 .sortedBy { distanceBetween(userLocation, it.latLng) }
                                 .take(20)
-                        } else {
-                            filtered.take(50)
+                            else -> filtered.take(50)
                         }
                     }
+                    .toMutableList()
+
+                selectedLocation?.let { selected ->
+                    if (filteredLocations.none { it.latLng == selected.latLng }) {
+                        filteredLocations.add(selected)
+                    }
+                }
 
                 filteredLocations.forEach { location ->
                     Marker(
                         state = MarkerState(position = location.latLng),
                         title = location.name,
                         snippet = location.description,
-                        icon = if (location == selectedLocation)
+                        icon = if (selectedLocation?.latLng == location.latLng)
                             BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)
                         else
                             BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED),
@@ -388,15 +407,25 @@ fun MapScreen(
                 }
             }
 
-            Button(
-                onClick = { isMoving = !isMoving },
-                colors = ButtonDefaults.buttonColors(containerColor = greenColor),
+            Surface(
+                color = Color.White,
                 shape = RoundedCornerShape(24.dp),
+                shadowElevation = 6.dp,
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
-                    .padding(16.dp)
+                    .padding(25.dp)
             ) {
-                Text(if (isMoving) "Stop Moving" else "Start Moving", color = Color.White)
+                Text(
+                    text = when {
+                        !sensorEnabled -> "⏸ Sensor OFF: manual mode"
+                        isMoving -> "🚶 Moving: showing closest 20 bins"
+                        else -> "🧍 Idle: showing more locations"
+                    },
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 10.dp),
+                    color = if (sensorEnabled) greenColor else Color.Gray,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
 
             FloatingActionButton(
@@ -405,7 +434,7 @@ fun MapScreen(
                 contentColor = greenColor,
                 modifier = Modifier
                     .align(Alignment.BottomStart)
-                    .padding(start = 6.dp, bottom = 5.dp)
+                    .padding(start = 6.dp, bottom = 80.dp)
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -417,7 +446,7 @@ fun MapScreen(
                 }
             }
 
-            // Search Bar (Top Overlay)
+            // Search Bar + Sensor Button (Top Overlay)
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -428,12 +457,15 @@ fun MapScreen(
                     .padding(horizontal = 12.dp, vertical = 6.dp)
                     .align(Alignment.TopCenter)
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
                     TextField(
                         value = query,
                         onValueChange = { query = it },
                         placeholder = { Text("Search by location") },
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier.weight(1f), // IMPORTANT: take available space
                         singleLine = true,
                         colors = TextFieldDefaults.colors(
                             focusedContainerColor = Color.Transparent,
@@ -450,8 +482,49 @@ fun MapScreen(
                             )
                         }
                     )
+
+                    Spacer(modifier = Modifier.width(8.dp))
+
+                    // Sensor Toggle Button
+                    IconButton(
+                        onClick = { sensorEnabled = !sensorEnabled },
+                        modifier = Modifier
+                            .size(40.dp)
+                            .background(
+                                if (sensorEnabled) Color.Red else greenColor,
+                                CircleShape
+                            )
+                    ) {
+                        Text(
+                            text = if (sensorEnabled) "⏸" else "▶",
+                            color = Color.White,
+                            fontSize = 14.sp
+                        )
+                    }
                 }
             }
+            }
         }
+    }
+
+class FakeSensorManager {
+
+    private val scope = CoroutineScope(Dispatchers.Main)
+    private var job: Job? = null
+
+    fun start(onUpdate: (Boolean) -> Unit) {
+        if (job != null) return // already running
+
+        job = scope.launch {
+            while (true) {
+                delay(3000)
+                onUpdate(listOf(true, false).random())
+            }
+        }
+    }
+
+    fun stop() {
+        job?.cancel()
+        job = null
     }
 }
