@@ -2,7 +2,7 @@ package com.example.fit5046_a2.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -30,13 +30,15 @@ import com.example.fit5046_a2.R
 import com.example.fit5046_a2.model.WasteItem
 import com.example.fit5046_a2.ui.components.BottomNavigationBar
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, androidx.compose.foundation.ExperimentalFoundationApi::class)
 @Composable
 fun WasteHistoryScreen(
     wasteItems: List<WasteItem>,
     onBackClick: () -> Unit = {},
     onAddItemClick: () -> Unit = {},
     onItemClick: (WasteItem) -> Unit = {},
+    onEditItemClick: (WasteItem) -> Unit = {},
+    onDeleteItemClick: (WasteItem) -> Unit = {},
     onMapClick: () -> Unit = {},
     onAchieveClick: () -> Unit
 ) {
@@ -232,7 +234,9 @@ fun WasteHistoryScreen(
                         items(todayItems) { item ->
                             WasteItemCard(
                                 item = item, 
-                                onClick = { onItemClick(item) }
+                                onClick = { onItemClick(item) },
+                                onEditClick = { onEditItemClick(item) },
+                                onDeleteClick = { onDeleteItemClick(item) }
                             )
                         }
                     }
@@ -242,7 +246,9 @@ fun WasteHistoryScreen(
                         items(yesterdayItems) { item ->
                             WasteItemCard(
                                 item = item, 
-                                onClick = { onItemClick(item) }
+                                onClick = { onItemClick(item) },
+                                onEditClick = { onEditItemClick(item) },
+                                onDeleteClick = { onDeleteItemClick(item) }
                             )
                         }
                     }
@@ -252,7 +258,9 @@ fun WasteHistoryScreen(
                         items(otherItems) { item ->
                             WasteItemCard(
                                 item = item,
-                                onClick = { onItemClick(item) }
+                                onClick = { onItemClick(item) },
+                                onEditClick = { onEditItemClick(item) },
+                                onDeleteClick = { onDeleteItemClick(item) }
                             )
                         }
                     }
@@ -291,11 +299,16 @@ fun SectionHeader(title: String) {
     }
 }
 
+@OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
 @Composable
 fun WasteItemCard(
     item: WasteItem, 
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    onEditClick: () -> Unit,
+    onDeleteClick: () -> Unit
 ) {
+    var expanded by remember { mutableStateOf(false) }
+
     val imageResId = when {
         item.name.contains("Plastic", ignoreCase = true) -> R.drawable.plastic_bottle
         item.name.contains("Glass", ignoreCase = true) -> R.drawable.glass_bottle
@@ -323,73 +336,99 @@ fun WasteItemCard(
         else -> 10
     }
 
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick),
-        shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
-    ) {
-        Row(
+    Box {
+        Card(
             modifier = Modifier
-                .padding(16.dp)
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
+                .fillMaxWidth()
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClick = { expanded = true }
+                ),
+            shape = RoundedCornerShape(24.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.White),
+            elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
         ) {
-            Box(
+            Row(
                 modifier = Modifier
-                    .size(64.dp)
-                    .background(categoryColor, CircleShape),
-                contentAlignment = Alignment.Center
+                    .padding(16.dp)
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Image(
-                    painter = painterResource(id = imageResId),
-                    contentDescription = null,
-                    modifier = Modifier.size(32.dp)
-                )
-            }
-
-            Spacer(modifier = Modifier.width(16.dp))
-
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = item.name,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp,
-                    color = Color(0xFF2D2D2D)
-                )
-                Text(
-                    text = "10:42 AM • Recycled at Home",
-                    color = Color.Gray.copy(alpha = 0.8f),
-                    fontSize = 14.sp
-                )
-            }
-
-            Surface(
-                shape = RoundedCornerShape(20.dp),
-                color = Color(0xFFE8F5E9),
-                modifier = Modifier.height(36.dp)
-            ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 12.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                Box(
+                    modifier = Modifier
+                        .size(64.dp)
+                        .background(categoryColor, CircleShape),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Text(
-                        text = "+$points",
-                        color = Color(0xFF2EBD59),
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Eco,
+                    Image(
+                        painter = painterResource(id = imageResId),
                         contentDescription = null,
-                        tint = Color(0xFF2EBD59),
-                        modifier = Modifier.size(18.dp)
+                        modifier = Modifier.size(32.dp)
                     )
                 }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = item.name,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = Color(0xFF2D2D2D)
+                    )
+                    Text(
+                        text = "10:42 AM • Recycled at Home",
+                        color = Color.Gray.copy(alpha = 0.8f),
+                        fontSize = 14.sp
+                    )
+                }
+
+                Surface(
+                    shape = RoundedCornerShape(20.dp),
+                    color = Color(0xFFE8F5E9),
+                    modifier = Modifier.height(36.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = "+$points",
+                            color = Color(0xFF2EBD59),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Eco,
+                            contentDescription = null,
+                            tint = Color(0xFF2EBD59),
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
             }
+        }
+
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            modifier = Modifier.background(Color.White)
+        ) {
+            DropdownMenuItem(
+                text = { Text("Edit Item") },
+                onClick = {
+                    onEditClick()
+                    expanded = false
+                }
+            )
+            DropdownMenuItem(
+                text = { Text("Delete Item", color = Color.Red) },
+                onClick = {
+                    onDeleteClick()
+                    expanded = false
+                }
+            )
         }
     }
 }
