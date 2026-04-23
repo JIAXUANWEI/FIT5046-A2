@@ -24,8 +24,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainApp() {
-    var currentScreen by remember { mutableStateOf("home") }
-    var selectedItem by remember { mutableStateOf<WasteItem?>(null) }
+    val currentScreen = remember { mutableStateOf("home") }
+    val selectedItem = remember { mutableStateOf<WasteItem?>(null) }
 
     // Initialize the list of waste items with some default data
     val wasteItems = remember {
@@ -38,122 +38,122 @@ fun MainApp() {
         )
     }
 
-    when (currentScreen) {
+    when (currentScreen.value) {
         "home" -> HomeScreen(
             onProfileClick = {
-                currentScreen = "profile"
-                Log.d("Navigation", "Navigating to profile. Current screen: $currentScreen")
+                currentScreen.value = "profile"
+                Log.d("Navigation", "Navigating to profile. Current screen: ${currentScreen.value}")
             },
             onGuideClick = {
                 Log.d("Navigation", "Guide clicked (not implemented)")
             },
             onHistoryClick = {
-                currentScreen = "history"
-                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+                currentScreen.value = "history"
+                Log.d("Navigation", "Navigating to history. Current screen: ${currentScreen.value}")
             },
             onMapClick = { 
-                currentScreen = "map"
-                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+                currentScreen.value = "map"
+                Log.d("Navigation", "Navigating to map. Current screen: ${currentScreen.value}")
             } ,
             onLoginClick = { 
-                currentScreen = "login"
-                Log.d("Navigation", "Navigating to login. Current screen: $currentScreen")
+                currentScreen.value = "login"
+                Log.d("Navigation", "Navigating to login. Current screen: ${currentScreen.value}")
             },
             onAchieveClick = {
-                currentScreen = "achieve"
-                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
+                currentScreen.value = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: ${currentScreen.value}")
             }
         )
 
         "login" -> LoginScreen(
             onBackClick = { 
-                currentScreen = "home"
-                Log.d("Navigation", "Back to home. Current screen: $currentScreen")
+                currentScreen.value = "home"
+                Log.d("Navigation", "Back to home. Current screen: ${currentScreen.value}")
             },
             onLoginClick = { 
-                currentScreen = "home"
-                Log.d("Navigation", "Login success. Current screen: $currentScreen")
+                currentScreen.value = "home"
+                Log.d("Navigation", "Login success. Current screen: ${currentScreen.value}")
             },
             onGoogleLoginClick = { },
             onRegisterClick = { 
-                currentScreen = "register"
-                Log.d("Navigation", "Navigating to register. Current screen: $currentScreen")
+                currentScreen.value = "register"
+                Log.d("Navigation", "Navigating to register. Current screen: ${currentScreen.value}")
             },
             onForgotPasswordClick = { }
         )
 
         "register" -> RegisterScreen(
             onBackClick = { 
-                currentScreen = "login"
-                Log.d("Navigation", "Back to login. Current screen: $currentScreen")
+                currentScreen.value = "login"
+                Log.d("Navigation", "Back to login. Current screen: ${currentScreen.value}")
             },
             onRegisterClick = { 
-                currentScreen = "home"
-                Log.d("Navigation", "Register success. Current screen: $currentScreen")
+                currentScreen.value = "home"
+                Log.d("Navigation", "Register success. Current screen: ${currentScreen.value}")
             }
         )
 
         "profile" -> ProfileScreen(
             onHomeClick = { 
-                currentScreen = "home"
-                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
+                currentScreen.value = "home"
+                Log.d("Navigation", "Navigating to home. Current screen: ${currentScreen.value}")
             },
             onHistoryClick = { 
-                currentScreen = "history"
-                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+                currentScreen.value = "history"
+                Log.d("Navigation", "Navigating to history. Current screen: ${currentScreen.value}")
             },
             onMapClick = { 
-                currentScreen = "map"
-                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+                currentScreen.value = "map"
+                Log.d("Navigation", "Navigating to map. Current screen: ${currentScreen.value}")
             },
             onAchieveClick = {
-                currentScreen = "achieve"
-                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
+                currentScreen.value = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: ${currentScreen.value}")
             }
         )
 
         "history" -> WasteHistoryScreen(
             wasteItems = wasteItems,
             onBackClick = {
-                currentScreen = "home"
-                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
+                currentScreen.value = "home"
+                Log.d("Navigation", "Navigating to home. Current screen: ${currentScreen.value}")
             },
             onAddItemClick = {
-                selectedItem = null
-                currentScreen = "add"
-                Log.d("Navigation", "Navigating to add. Current screen: $currentScreen, SelectedItem: $selectedItem")
+                selectedItem.value = null
+                currentScreen.value = "add"
+                Log.d("Navigation", "Navigating to add. Current screen: ${currentScreen.value}")
             },
             onItemClick = { item ->
-                selectedItem = item
-                currentScreen = "details"
-                Log.d("Navigation", "Viewing details for ${selectedItem?.name}. Current screen: $currentScreen")
+                selectedItem.value = item
+                currentScreen.value = "details"
+                Log.d("Navigation", "Viewing details for ${item.name}. Current screen: ${currentScreen.value}")
             },
             onEditItemClick = { item ->
-                selectedItem = item
-                currentScreen = "edit"
-                Log.d("Navigation", "Navigating to edit for ${item.name}. Current screen: $currentScreen")
+                selectedItem.value = item
+                currentScreen.value = "edit"
+                Log.d("Navigation", "Navigating to edit for ${item.name}. Current screen: ${currentScreen.value}")
             },
             onDeleteItemClick = { item ->
                 wasteItems.remove(item)
                 Log.d("Navigation", "Deleted item: ${item.name}. Remaining items: ${wasteItems.size}")
             },
             onMapClick = {
-                currentScreen = "map"
-                Log.d("Navigation", "Navigating to map. Current screen: $currentScreen")
+                currentScreen.value = "map"
+                Log.d("Navigation", "Navigating to map. Current screen: ${currentScreen.value}")
             },
             onAchieveClick = {
-                currentScreen = "achieve"
-                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
+                currentScreen.value = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: ${currentScreen.value}")
             }
         )
         "add", "edit" -> AddWasteItemScreen(
-            initialItem = selectedItem,
+            initialItem = selectedItem.value,
             onBackClick = {
-                currentScreen = "history"
-                Log.d("Navigation", "Back to history. Current screen: $currentScreen")
+                currentScreen.value = "history"
+                Log.d("Navigation", "Back to history. Current screen: ${currentScreen.value}")
             },
             onSaveClick = { updatedItem ->
-                if (currentScreen == "edit") {
+                if (currentScreen.value == "edit") {
                     val index = wasteItems.indexOfFirst { it.id == updatedItem.id }
                     if (index != -1) {
                         wasteItems[index] = updatedItem
@@ -161,67 +161,67 @@ fun MainApp() {
                 } else {
                     wasteItems.add(updatedItem)
                 }
-                currentScreen = "history"
-                Log.d("Navigation", "Item saved. Returning to history. Current screen: $currentScreen")
+                currentScreen.value = "history"
+                Log.d("Navigation", "Item saved. Returning to history. Current screen: ${currentScreen.value}")
             }
         )
         "details" -> {
-            selectedItem?.let { item ->
+            selectedItem.value?.let { item ->
                 WasteItemDetailsScreen(
                     item = item,
                     onBackClick = {
-                        currentScreen = "history"
-                        Log.d("Navigation", "Back to history. Current screen: $currentScreen")
+                        currentScreen.value = "history"
+                        Log.d("Navigation", "Back to history. Current screen: ${currentScreen.value}")
                     },
                     onDeleteClick = {
                         wasteItems.remove(item)
-                        currentScreen = "history"
-                        Log.d("Navigation", "Item deleted: ${item.name}. Current screen: $currentScreen")
+                        currentScreen.value = "history"
+                        Log.d("Navigation", "Item deleted: ${item.name}. Current screen: ${currentScreen.value}")
                     }
                 )
             }
         }
         "map" -> MapScreen(
             onHomeClick = {
-                currentScreen = "home"
-                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
+                currentScreen.value = "home"
+                Log.d("Navigation", "Navigating to home. Current screen: ${currentScreen.value}")
             },
             onHistoryClick = {
-                currentScreen = "history"
-                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+                currentScreen.value = "history"
+                Log.d("Navigation", "Navigating to history. Current screen: ${currentScreen.value}")
             },
             onProfileClick = {
-                currentScreen = "profile"
-                Log.d("Navigation", "Navigating to profile. Current screen: $currentScreen")
+                currentScreen.value = "profile"
+                Log.d("Navigation", "Navigating to profile. Current screen: ${currentScreen.value}")
             },
             onGuideClick = {
                 Log.d("Navigation", "Guide clicked (not implemented)")
             },
             onAchieveClick = {
-                currentScreen = "achieve"
-                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
+                currentScreen.value = "achieve"
+                Log.d("Navigation", "Navigating to achieve. Current screen: ${currentScreen.value}")
             }
         )
 
         "achieve" -> AchievementScreen(
             onHomeClick = {
-                currentScreen = "home"
-                Log.d("Navigation", "Navigating to home. Current screen: $currentScreen")
+                currentScreen.value = "home"
+                Log.d("Navigation", "Navigating to home. Current screen: ${currentScreen.value}")
             },
             onHistoryClick = {
-                currentScreen = "history"
-                Log.d("Navigation", "Navigating to history. Current screen: $currentScreen")
+                currentScreen.value = "history"
+                Log.d("Navigation", "Navigating to history. Current screen: ${currentScreen.value}")
             },
             onProfileClick = {
-                currentScreen = "profile"
-                Log.d("Navigation", "Navigating to profile. Current screen: $currentScreen")
+                currentScreen.value = "profile"
+                Log.d("Navigation", "Navigating to profile. Current screen: ${currentScreen.value}")
             },
             onGuideClick = {
                 Log.d("Navigation", "Guide clicked (not implemented)")
             },
             onMapClick = {
-                currentScreen = "map"
-                Log.d("Navigation", "Navigating to achieve. Current screen: $currentScreen")
+                currentScreen.value = "map"
+                Log.d("Navigation", "Navigating to achieve. Current screen: ${currentScreen.value}")
             }
         )
     }
